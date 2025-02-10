@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Recycling of air conditioning water"
-date:   2025-02-02 12:23:39 -0300
-categories: jekyll update
+date:   2019-02-03
+categories: General
 ---
 
 This is a project that I and some colleagues made during the middle of vocational school. It is basically the measurement of how much water could be gathered from the air conditioning system at the campus. It was a simple data collection an analysis made with the intent of maybe one day being used to justify the implementation of a real system for gathering and reusing the water already being wasted. These data and analysis may be useful to someone else, so I decided to share it.

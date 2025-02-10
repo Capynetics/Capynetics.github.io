@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Brain-computer interface attempt"
-date:   2019-02-03 12:23:39 -0300
-categories: jekyll update
+date:   2019-02-03
+categories: General
 ---
 The electrical activity of the human brain is an object of study since the beginning of the XX century, and since then a lot of techniques have been developed to obtain and interpret the electrical signals of the brain, with influence in a great sort of knowledge areas, from arts to medicine and engineering. The activities developed in this Project intend to develop a brain-computer interface, by an electronic circuit for pre-amplifying and filtering the influence of the electrical network and transfer the information to a data acquisition board in order to work with the data in the computer using LabView.
 

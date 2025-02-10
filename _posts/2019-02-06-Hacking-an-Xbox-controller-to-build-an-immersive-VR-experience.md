@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Hacking an Xbox controller to build an immersive VR experience"
-date:   2025-02-02 12:23:39 -0300
-categories: <INSERT CATEGORIES HERE>
+date:   2019-02-06
+categories: General
 ---
 
 This Project was developed some time ago for a client that gladly let me write something about it here, although not in detail. In the next lines, I will go along some of the thought processes I used to project and build everything. The client in question works by renting VR goggles to parties and corporative events. During a gaming session, the clients would have the visual stimulation of the VR goggles and the vibration of the controller in their hands, but my client wanted more immersion in the form of a special seat that would vibrate at the same time as the controller. In order to achieve that, he had a specially built “cockpit-like” structure and now he only needed the electronics to control a “mysterious” vibration actuator. This vibration actuator was an old back massager big and strong enough to shake the entire structure a lot. So at the principle, there were two challenges: how to make something vibrate at the same time as the controller and how to control the improvised actuator.

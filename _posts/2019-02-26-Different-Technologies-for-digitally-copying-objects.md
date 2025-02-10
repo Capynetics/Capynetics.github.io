@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Different Technologies for digitally copying objects"
-date:   2019-02-03 12:23:39 -0300
-categories: jekyll update
+date:   2019-02-26 
+categories: General
 ---
 Every day the line between real and digital gets thinner. Virtual reality, augmented reality, and 3D printing are greatly responsible for this change. In these brave new world, it is necessary, and also useful, to be able to digitize objects and to easily edit, share and replicate them. In this article, I will go through 3 technologies that I generally use when faced with such a challenge and that are very low cost. This is not going to be an in-depth tutorial about any of them, but a fast look and subsequent discussion about recommended uses and good practices.
 
