@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PathSim</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: #ffffff;
+        font-family: monospace;
+      }
+
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 50px 1fr 100px;
+      }
+
+      .footer{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: black;
+        color: white;
+      }
+
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: grey;
+      }
+
+      .header{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: black;
+        color: white;
+        font-size: 20px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class ="container">
+      <div class="header"><center><p>Path planing algorithms simulator </p> </center>  </div>
+      <div class="menu">
+        
+        <p> MENU </p>  </br>
+        <label for="Algorithm">Algorithm:</label>
+        <select name="cars" id="Algorithm">
+          <option value="bug0">bug0</option>
+          <option value="bug1">bug1</option>
+          <option value="bug2">bug2</option>
+          <option value="wavefront">wavefront</option>
+          <option value="rrt">RRT</option>
+        </select>
+        </br></br>
+      
+        <label for="Scene">Scene:</label>
+        <select name="Scene" id="scene_selector">
+          <option value="scene 1">bug trap</option>
+          <option value="scene 2">two bars</option>
+          <option value="scene 3">corridors</option>
+          <option value="scene 4">circles</option>
+          <option value="scene 5">big circle</option>
+          <option value="scene 6">labyrinth</option>
+        </select>
+      </br></br>
+        <input type="button" id="Start" value="Start">
+      </br></br>
+        <input type="button" id="Stop" value="Stop">
+
+      </div>
+      <div class="simulation" id="canvasForHTML"></div>
+      <div class="footer"><center><p>© 2022 Setpoint Capybara. </p> </center>  </div>
+    </div>
+  </body>
+  <script src="p5.min.js"></script>
+  <script src="robot.js"></script>
+  <script src="sketch.js"></script>
+</html>
