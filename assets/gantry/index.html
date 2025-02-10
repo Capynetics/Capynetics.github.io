@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Gantry</title>
+        <style>
+            html, body {
+                margin: 0;
+                height: 100%;
+            }
+            
+            #c {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+
+            
+</style>
+	</head>
+	<body>
+        <canvas id="c"></canvas>
+        
+        
+		<script type="module">
+            import * as THREE from './js/three.module.js';
+            import {OrbitControls} from './js/OrbitControls.js';
+            import {OBJLoader} from './js/OBJLoader.js';
+            import * as dat from './dat.gui-master/build/dat.gui.module.js';
+            
+            const gui = new dat.GUI();
+            
+            function main() {
+                const canvas = document.querySelector('#c'); //selecting the canvas
+                const renderer = new THREE.WebGLRenderer({canvas}); //selecting the renderer
+
+
+                //Making a camera
+                const fov = 45;
+                const aspect = 2;  // the canvas default
+                const near = 0.1;
+                const far = 100;  
+                const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+                camera.position.set(10, 10, 10);
+                
+                const controls = new OrbitControls(camera, canvas);
+                controls.target.set(0, 2, 0);
+                controls.update();        
+                
+                const scene = new THREE.Scene();//Making a scene
+                scene.background = new THREE.Color(0xAAAAAA);
+                
+                
+                //Making hemisphere light
+                const skyColor = 0xffffff;  // light blue
+                const groundColor = 0x878787;  // brownish orange
+                const intensity = 1;
+                const light = new THREE.HemisphereLight(skyColor, groundColor, intensity);
+                
+                //Making axes
+                const axes = new THREE.AxesHelper();
+                axes.material.depthTest = false;
+                axes.renderOrder = 1;
+                
+                //Making grid
+                const grid = new THREE.GridHelper(10, 10);   
+                grid.renderOrder = 1;
+
+                
+                scene.add(light); //adding light to the scene
+                scene.add(grid); //adding grid to the scene
+                scene.add(axes); //adding axes to the scene
+
+              
+                //Adding a 3D models
+                    const objLoader = new OBJLoader();
+                    objLoader.load('./models/GantryBase.obj', (root) => {
+                        root.scale.set(0.04,0.04,0.04);
+                        root.rotation.x = -1.5708;
+                        root.position.set(0, 3.65, 4);
+                        scene.add(root);
+                    });
+                    
+                    var Axis1;
+                    objLoader.load('./models/GantryAxis1.obj', (root) => {
+                        root.scale.set(0.04,0.04,0.04);
+                        root.position.set( 0, 3.65, 3);
+                        root.rotation.x = -1.5708;
+                        Axis1 = root;
+                        
+                    });
+                    
+                    var Axis2;
+                    objLoader.load('./models/GantryAxis2.obj', (root) => {
+                        root.scale.set(0.04,0.04,0.04);
+                        root.position.set(-1, 3.5, 3);
+                        root.rotation.x = -1.5708;
+                        Axis2 = root;
+                        
+                    });
+                    
+                    var Axis3;                    
+                    objLoader.load('./models/GantryAxis3.obj', (root) => {
+                        root.scale.set(0.04,0.04,0.04);
+                        root.position.set( -1, 4.5, 3);
+                        root.rotation.x = -1.5708;
+                        Axis3 = root;
+                    });
+                    
+                    
+                //Checking if canvas resolution equals canvas size
+                function resizeRendererToDisplaySize(renderer) {
+                    const canvas = renderer.domElement;
+                    const width = canvas.clientWidth;
+                    const height = canvas.clientHeight;
+                    const needResize = canvas.width !== width || canvas.height !== height;
+                    if (needResize) {
+                        renderer.setSize(width, height, false);
+                    }
+                    return needResize;
+                }
+                const group1 = new THREE.Group();
+                const group2 = new THREE.Group();
+                const group3 = new THREE.Group();
+                const group4 = new THREE.Group();
+                const group5 = new THREE.Group();
+                const group6 = new THREE.Group();
+                console.log(scene.children);
+                gui.add(group1.position, "z", -1, 5).name("Link 1");
+                gui.add(group2.position, "x", 0, 3).name("Link 2");
+                gui.add(group3.position, "y", -1, 0).name("Link 3");
+                
+                function render(time) {
+                    //constantly updanting canvas size & resolution
+                    if (resizeRendererToDisplaySize(renderer)) {
+                        const canvas = renderer.domElement;
+                        camera.aspect = canvas.clientWidth / canvas.clientHeight;
+                        camera.updateProjectionMatrix();
+                    }
+                    
+                    time *= 0.001;  // convert time to seconds
+ 
+                    
+                    if(typeof Axis1 !== "undefined")
+                    {
+                        group1.add(Axis1);
+                        group1.add(group2);
+
+                        if(typeof Axis2 !== "undefined")
+                        {   
+                            group2.add(Axis2);
+                            group2.add(group3);
+                            
+                           if(typeof Axis3 !== "undefined")
+                           {
+                                group3.add(Axis3); 
+                           }
+                             
+                        }
+                    }
+                    
+                    scene.add(group1);
+
+                    renderer.render(scene, camera);
+ 
+                    requestAnimationFrame(render);
+                }
+                requestAnimationFrame(render);
+            }
+            main();
+            
+		</script>
+	</body>
+</html>

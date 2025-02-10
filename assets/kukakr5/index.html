@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Kuka KR5</title>
+        <style>
+            html, body {
+                margin: 0;
+                height: 100%;
+            }
+            
+            #c {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+
+            
+</style>
+	</head>
+	<body>
+        <canvas id="c"></canvas>
+        
+        
+		<script type="module">
+            import * as THREE from './js/three.module.js';
+            import {OrbitControls} from './js/OrbitControls.js';
+            import {OBJLoader} from './js/OBJLoader.js';
+            import * as dat from './dat.gui-master/build/dat.gui.module.js';
+            
+            const gui = new dat.GUI();
+            
+            function main() {
+                const canvas = document.querySelector('#c'); //selecting the canvas
+                const renderer = new THREE.WebGLRenderer({canvas}); //selecting the renderer
+
+
+                //Making a camera
+                const fov = 45;
+                const aspect = 2;  // the canvas default
+                const near = 0.1;
+                const far = 100;  
+                const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+                camera.position.set(10, 10, 10);
+                
+                const controls = new OrbitControls(camera, canvas);
+                controls.target.set(0, 2, 0);
+                controls.update();        
+                
+                const scene = new THREE.Scene();//Making a scene
+                scene.background = new THREE.Color(0xAAAAAA);
+                
+                
+                //Making hemisphere light
+                const skyColor = 0xffffff;  // light blue
+                const groundColor = 0x878787;  // brownish orange
+                const intensity = 1;
+                const light = new THREE.HemisphereLight(skyColor, groundColor, intensity);
+                
+                //Making axes
+                const axes = new THREE.AxesHelper();
+                axes.material.depthTest = false;
+                axes.renderOrder = 1;
+                
+                //Making grid
+                const grid = new THREE.GridHelper(10, 10);   
+                grid.renderOrder = 1;
+
+                
+                scene.add(light); //adding light to the scene
+                scene.add(grid); //adding grid to the scene
+                scene.add(axes); //adding axes to the scene
+
+              
+                //Adding a 3D models
+                    const objLoader = new OBJLoader();
+                    objLoader.load('./models/Base.obj', (root) => {
+                        root.scale.set(0.01,0.01,0.01);
+                        scene.add(root);
+                    });
+                    
+                    var Axis1;
+                    objLoader.load('./models/Axis1.obj', (root) => {
+                        root.scale.set(0.01,0.01,0.01);
+                        root.position.set(0, 2.03, 0);
+                        Axis1 = root;
+                        
+                    });
+                    
+                    var Axis2;
+                    objLoader.load('./models/Axis2.obj', (root) => {
+                        root.scale.set(0.01,0.01,0.01);
+                        root.rotation.x = 1.5708;
+                        root.rotation.z = 2*1.5708;
+                        root.rotation.y = 0.7;
+                        Axis2 = root;
+                        
+                    });
+                    
+                    var Axis3;                    
+                    objLoader.load('./models/Axis3.obj', (root) => {
+                        root.scale.set(0.01,0.01,0.01);
+                        root.rotation.y = -1.5708;
+                        Axis3 = root;
+                    });
+                    
+                    var Axis4;
+                    objLoader.load('./models/Axis4.obj', (root) => {
+                        root.scale.set(0.01,0.01,0.01);
+                        Axis4 = root;
+                    });
+                    
+                    var Axis5;
+                    objLoader.load('./models/Axis5.obj', (root) => {
+                        root.scale.set(0.01,0.01,0.01);
+                        root.rotation.x = 1.5708;
+                        Axis5 = root;
+                    });
+                    
+                    var Axis6;
+                    objLoader.load('./models/Axis6.obj', (root) => {
+                        root.scale.set(0.01,0.01,0.01);
+                        Axis6 = root;
+                    });
+                    
+ 
+                    
+                //Checking if canvas resolution equals canvas size
+                function resizeRendererToDisplaySize(renderer) {
+                    const canvas = renderer.domElement;
+                    const width = canvas.clientWidth;
+                    const height = canvas.clientHeight;
+                    const needResize = canvas.width !== width || canvas.height !== height;
+                    if (needResize) {
+                        renderer.setSize(width, height, false);
+                    }
+                    return needResize;
+                }
+                const group1 = new THREE.Group();
+                const group2 = new THREE.Group();
+                const group3 = new THREE.Group();
+                const group4 = new THREE.Group();
+                const group5 = new THREE.Group();
+                const group6 = new THREE.Group();
+                console.log(scene.children);
+                gui.add(group1.rotation, "y", -6.24, 6.24).name("Link 1");
+                gui.add(group2.rotation, "z", -6.24, 6.24).name("Link 2");
+                gui.add(group3.rotation, "z", -6.24, 6.24).name("Link 3");
+                gui.add(group4.rotation, "x", -6.24, 6.24).name("Link 4");
+                gui.add(group5.rotation, "z", -6.24, 6.24).name("Link 5");
+                gui.add(group6.rotation, "y", -6.24, 6.24).name("Link 6");
+                function render(time) {
+                    //constantly updanting canvas size & resolution
+                    if (resizeRendererToDisplaySize(renderer)) {
+                        const canvas = renderer.domElement;
+                        camera.aspect = canvas.clientWidth / canvas.clientHeight;
+                        camera.updateProjectionMatrix();
+                    }
+                    
+                    time *= 0.001;  // convert time to seconds
+ 
+                    
+                    if(typeof Axis1 !== "undefined")
+                    {
+                        group1.add(Axis1);
+                        group1.add(group2);
+                        //group1.rotation.y = time;
+                        if(typeof Axis2 !== "undefined")
+                        {   
+                            group2.add(Axis2);
+                            group2.add(group3);
+                            group2.position.set(0.7, 3.35, -1.07);
+                            
+                            //group2.rotation.z = time;
+                            if(typeof Axis3 !== "undefined")
+                            {
+                                group3.add(Axis3);
+                                group3.add(group4);
+                                group3.position.set(-3, 2.2, 1.1);
+                       
+                                //group3.rotation.z = time;
+                                if(typeof Axis4 !== "undefined")
+                                {
+                                    group4.add(Axis4);
+                                    group4.add(group5);
+                                    group4.position.set( 2.2, 0.9, 0);
+                                    
+                                    //group4.rotation.x = time;
+                                    if(typeof Axis5 !== "undefined")
+                                    {
+                                        group5.add(Axis5);
+                                        group5.add(group6);
+                                        group5.position.set( 2, 0, 0);
+                                    
+                                        //group5.rotation.z = time;
+                                        if(typeof Axis6 !== "undefined")
+                                        {
+                                            group6.add(Axis6);
+                                            group6.position.set( 0, 0.745, 0);
+                                    
+                                            //group6.rotation.y = time;
+                                        }
+                                    }
+                                }
+                            }
+                             
+                        }
+                    }
+                    scene.add(group1);
+
+                    renderer.render(scene, camera);
+ 
+                    requestAnimationFrame(render);
+                }
+                requestAnimationFrame(render);
+            }
+            main();
+            
+		</script>
+	</body>
+</html>
