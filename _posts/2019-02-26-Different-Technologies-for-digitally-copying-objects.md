@@ -20,7 +20,9 @@ If the object you need to copy has a simple geometry and/or is neither too small
 
 As seen above, with only some commands and photographic reference I was able to quickly create a good enough copy of the piece. The 3D model was then exported to stereolithographic format and 3D printed. You can see and download the file below.
 
+<div style="text-align: center;">
 <div class="sketchfab-embed-wrapper"> <iframe title="Chess Horse" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/fafa037f76aa4a749f87c678aa769321/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/chess-horse-fafa037f76aa4a749f87c678aa769321?utm_medium=embed&utm_campaign=share-popup&utm_content=fafa037f76aa4a749f87c678aa769321" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Chess Horse </a> by <a href="https://sketchfab.com/setpointcapybara?utm_medium=embed&utm_campaign=share-popup&utm_content=fafa037f76aa4a749f87c678aa769321" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> setpointcapybara </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=fafa037f76aa4a749f87c678aa769321" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+</div>
 
 # Digitally copying objects with photogrammetry
 
@@ -36,20 +38,25 @@ If the object you are trying to copy has a geometry too complicated to be hand-c
 
 After taking the pictures I uploaded them to the easy to use Meshroom interface. The only parameter I changed from the default options was “Max points” in the “Mesh” node (from 5000000 to 1000000). The whole reconstruction process took 3 hours on my computer, even with my NVIDIA GeForce GTX 950. Down below you can see the resulted file.
 
+<div style="text-align: center;">
 <div class="sketchfab-embed-wrapper"> <iframe title="Venus UFMG" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/70770c2f744541e0b350b9a591faf4ed/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/venus-ufmg-70770c2f744541e0b350b9a591faf4ed?utm_medium=embed&utm_campaign=share-popup&utm_content=70770c2f744541e0b350b9a591faf4ed" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Venus UFMG </a> by <a href="https://sketchfab.com/setpointcapybara?utm_medium=embed&utm_campaign=share-popup&utm_content=70770c2f744541e0b350b9a591faf4ed" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> setpointcapybara </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=70770c2f744541e0b350b9a591faf4ed" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+</div>
 
 # Digitally copying objects with 3d Scanning
 
 3D scanners are very expensive. But if you are on a budget the XBOX 360 Kinect is a good substitute. It is a fairly capable 3D scanner when used with the Skanect software. You only need the proper adaptor, so you can plug the Kinect to Windows through USB. I use it every time I can scan something at home with complex or bio-inspired geometry. As a demonstration, I will copy a human bust. The process is quite simple, you plug the sensor to your PC, activate the software and then walk around the subject trying to catch as much detail as possible. Down below you can see the UI.
 
-{:refdef: style="text-align: center;"} ![Image]({{ site.baseurl }}/assets/ScaningProcess.png) {: refdef}
+{:refdef: style="text-align: center;"} 
+![Image]({{ site.baseurl }}/assets/ScaningProcess.png) 
+{: refdef}
 {:refdef: style="text-align: center;"}
 Scaning process
 {: refdef}
 
 Make sure you have enough space to walk around the subject and the sensor wire is not going to be a problem while you walk. It is also good to remember that this technique does not work well in shiny metallic surfaces. The whole process took about 15 minutes. You can see and download the resulted file below.
-
+<div style="text-align: center;">
 <div class="sketchfab-embed-wrapper"> <iframe title="Betty" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/d3fa90b3c49447279573c23b4b885034/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/betty-d3fa90b3c49447279573c23b4b885034?utm_medium=embed&utm_campaign=share-popup&utm_content=d3fa90b3c49447279573c23b4b885034" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Betty </a> by <a href="https://sketchfab.com/setpointcapybara?utm_medium=embed&utm_campaign=share-popup&utm_content=d3fa90b3c49447279573c23b4b885034" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> setpointcapybara </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=d3fa90b3c49447279573c23b4b885034" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+</div>
 
 # Conclusion
 

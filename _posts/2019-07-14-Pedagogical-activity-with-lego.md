@@ -54,7 +54,8 @@ The activity book is supposed to be given to each child at the beginning of the 
 
 ## HTML instructions
 
-<iframe src="http://setpointcapybara.com/lego/" width="640" height="480"></iframe>
-CLICK HERE FOR INSTRUCTIONS IN FULL SCREEN
+<iframe src="https://capynetics.github.io/assets/lego/" width="640" height="480"></iframe>
+
+[CLICK HERE FOR INSTRUCTIONS IN FULL SCREEN](https://capynetics.github.io/assets/lego/)
 
 For help or insights about the class please feel free to comment in this post. I will answer as soon as I can

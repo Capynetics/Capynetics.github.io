@@ -5,7 +5,7 @@ date:   2019-08-15
 categories: General
 ---
 
-This project is a complete implementation of the exercise 5.17 from Frank Vahid's book "Digital Design" down to the electronic hardware level. This article will discuss general topics on the process design and all the code (in VHDL) will be available in a Github repository.
+This project is a complete implementation of the exercise 5.17 from Frank Vahid's book "Digital Design" down to the electronic hardware level. This article will discuss general topics on the process design and all the code (in VHDL) will be available in a [Github repository](https://github.com/Capynetics/RTL-PROJECT-EXAMPLE).
 
 The example consists of an RTL project that provides a warning signal when the average of the four last temperature samples exceeds a user-defined value. The circuit has a 16-bit CT (current temperature) input indicating the current temperature, a 16-bit WT (warning temperature) input that indicates the warning temperature specified by the user, and a clear input button that disables the alert signal. When the Average temperature exceeds the setpoint specified by the user, the circuit activates output W (warning), enabling the alert signal. The alert output remains at a high logic level until the clear button is pressed.
 

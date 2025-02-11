@@ -4,15 +4,4 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+This is a repository of ideas, most of them gravitate around STEM and geek culture. My objective here is to share thoughts and stimulate discussion around the subjects here approached. As a young millennial much of what I know and much of my identity were built in the world wide web, so, this site can be seen as both a way to retribute this brave world for its impact on me and try to more actively participate on it.

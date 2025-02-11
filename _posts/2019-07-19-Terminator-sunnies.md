@@ -27,6 +27,10 @@ Down below you will find the electronics components necessary followed by a diag
 ![Image]({{ site.baseurl }}/assets/terminator_circuit.png)
 {: refdef}
 
+{:refdef: style="text-align: center;"}
+*Project diagram*
+{: refdef}
+
 ## The programing part
 
 The embedded code bellow is commented at an understandable level, but if you have any doubt don't hesitate to comment asking for help.
