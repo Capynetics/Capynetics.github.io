@@ -4,4 +4,10 @@ title: About
 permalink: /about/
 ---
 
-This is a repository of ideas, most of them gravitate around STEM and geek culture. My objective here is to share thoughts and stimulate discussion around the subjects here approached. As a young millennial much of what I know and much of my identity were built in the world wide web, so, this site can be seen as both a way to retribute this brave world for its impact on me and try to more actively participate on it.
+Hello! My name is Johnata Brayan. I'm passionate about STEM, robotics, and geek culture, and I thrive on sharing insights and sparking engaging discussions in these areas. As a young millennial shaped profoundly by the internet, this blog is my way of contributing back to the community that has significantly influenced my professional growth and personal identity. I hope you'll find inspiration, knowledge, and a vibrant platform for thoughtful exchanges here.
+
+If you want to talk to me, feel free to contact me through one of my socials: 
+
+[LinkedIn](https://www.linkedin.com/in/johnata-brayan/)
+
+[Instagram](https://www.instagram.com/johnatabrayan/)
