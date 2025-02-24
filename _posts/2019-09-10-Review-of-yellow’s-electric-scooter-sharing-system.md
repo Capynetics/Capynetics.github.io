@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: new_post
 title:  "Review of yellow’s electric scooter-sharing system"
+image: assets/2019-09-10-Review-of-yellow’s-electric-scooter-sharing-system.png
 date:   2019-09-10 
 categories: General
 ---

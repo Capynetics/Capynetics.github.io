@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: new_post
 title:  "RTL project example with FPGA"
+image: assets/2019-08-15-RTL-project-example-with-FPGA.jpg
 date:   2019-08-15 
 categories: General
 ---

@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: new_post
 title:  "Terminator sunnies"
+image: assets/2019-07-19-Terminator-sunnies.png
 date:   2019-07-19 
 categories: General
 ---

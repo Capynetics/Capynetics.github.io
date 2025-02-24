@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: new_post
 title:  "Hacking an Xbox controller to build an immersive VR experience"
+image: assets/2019-02-06-Hacking-an-Xbox-controller-to-build-an-immersive-VR-experience.jpg
 date:   2019-02-06
 categories: General
 ---

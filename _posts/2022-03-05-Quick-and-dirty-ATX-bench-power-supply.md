@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: new_post
 title:  "Quick and dirty ATX bench power supply"
+image: assets/2022-03-05-Quick-and-dirty-ATX-bench-power-supply.jpeg
 date:   2022-03-05 
 categories: General
 ---

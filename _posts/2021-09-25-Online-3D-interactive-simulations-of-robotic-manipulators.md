@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: new_post
 title:  "Online 3D interactive simulations of robotic manipulators"
+image: assets/2021-09-25-Online-3D-interactive-simulations-of-robotic-manipulators.png
 date:   2021-09-25 
 categories: General
 ---

@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: new_post
 title:  "Recycling of air conditioning water"
+image: assets/2019-02-03-Recycling-of-air-conditioning-water.jpg
 date:   2019-02-03
 categories: General
 ---

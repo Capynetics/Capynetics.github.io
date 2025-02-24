@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: new_post
 title:  "Pedagogical activity with lego"
+image: assets/2019-07-14-Pedagogical-activity-with-lego.jpg
 date:   2019-07-14 
 categories: General
 ---

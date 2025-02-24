@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: new_post
 title:  "Different Technologies for digitally copying objects"
+image: assets/2019-02-26-Different-Technologies-for-digitally-copying-objects.png
 date:   2019-02-26 
 categories: General
 ---

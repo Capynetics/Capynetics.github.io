@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: new_post
 title:  "Watering my plants with Arduino"
+image: assets/2022-03-24-Watering-my-plants-with-Arduino.png
 date:   2022-03-24
 categories: General
 ---

@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: new_post
 title:  "Cardboard capybara with Slicer for Fusion360"
+image: assets/2020-06-14-Cardboard-capybara-with-Slicer-for-Fusion360.jpg
 date:   2020-06-14 
 categories: General
 ---
