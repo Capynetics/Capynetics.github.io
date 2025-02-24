@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="shortcut icon" type="image/png" href="assets/favicon.ico">
+  <link rel="shortcut icon" type="image/png" href="{{ site.url }}/assets/favicon.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
@@ -19,34 +19,35 @@
     }
 
     .navbar {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 0px;
-        background-color: rgba(10, 17, 25, 1.0);
-        z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0px;
+      backdrop-filter: blur(10px);
+      background-color: rgba(10, 17, 25, 1);
+      z-index: 2;
     }
 
     .navbar a {
       color: #fff;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 10px;
       font-size: 1em;
     }
 
     .container {
       flex: 1;
       max-width: 700px;
-      margin: 100px auto 0 auto;
-      padding: 40px 20px;
+      margin: 80px auto 0 auto;
+      padding: 20px;
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 2em;
       line-height: 1.2;
       margin-bottom: 0.3em;
     }
@@ -54,22 +55,23 @@
     .featured-image img {
       width: 100%;
       height: auto;
-      margin: 30px 0;
+      margin: 20px 0;
+      object-fit: cover;
     }
 
     .post-meta {
       color: #888;
       font-size: 0.9em;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .post-content {
-      font-size: 1.1em;
+      font-size: 1em;
     }
 
     .post-content img {
-    max-width: 100%;
-    height: auto;
+      max-width: 100%;
+      height: auto;
     }
 
     a {
@@ -83,10 +85,37 @@
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 15px;
       background-color: #0a1119;
       color: #fff;
     }
+
+    @media (max-width: 600px) {
+
+    .container {
+      margin-top: 60px;
+      padding: 15px;
+      max-width: 100%; /* Ensure container doesn't overflow */
+      box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    h1 {
+      font-size: 1.5em;
+      word-wrap: break-word; /* Avoid horizontal overflow for long words */
+    }
+
+    .featured-image img {
+      margin: 15px 0;
+      width: 100%; /* Image fully responsive */
+      max-width: 100%; 
+      height: auto;
+    }
+
+    body, html {
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+  }
+
   </style>
 </head>
 <body>
