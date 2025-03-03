@@ -11,3 +11,5 @@ If you want to talk to me, feel free to contact me through one of my socials:
 [LinkedIn](https://www.linkedin.com/in/johnata-brayan/)
 
 [Instagram](https://www.instagram.com/johnatabrayan/)
+
+[Github](https://github.com/Capynetics)
