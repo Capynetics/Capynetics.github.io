@@ -32,14 +32,16 @@
             text-align: center;
         }
 
-        .hero video {
+        .hero-canvas {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(1.02);
-            min-width: 102%;
-            min-height: 102%;
+            inset: 0;
             z-index: -1;
+        }
+
+        .hero-canvas canvas {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
         }
 
         .hero img, .hero h1 {
@@ -114,9 +116,7 @@
 {% include new_navbar.html %}
 
 <section class="hero" aria-label="Main banner">
-    <video autoplay loop muted aria-hidden="true">
-        <source src="assets/background.mp4" type="video/mp4">
-    </video>
+    <div id="hero-canvas" class="hero-canvas" aria-hidden="true"></div>
     <img src="assets/logo.png" alt="Capynetics Logo"> 
     <h1>Welcome to Capynetics</h1> 
 </section>
@@ -133,6 +133,511 @@
 </div>
 
 {% include new_footer.html %}
+
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+<script>
+(() => {
+    const container = document.getElementById("hero-canvas");
+    if (!container) return;
+
+    function pickWeightedVariant(pool) {
+        const total = pool.reduce((sum, item) => sum + item.weight, 0);
+        let roll = Math.random() * total;
+        for (let i = 0; i < pool.length; i += 1) {
+            roll -= pool[i].weight;
+            if (roll <= 0) return pool[i];
+        }
+        return pool[0];
+    }
+
+    function createParticleWebSketch() {
+        return (p) => {
+            const particles = [];
+            const particleCount = 140;
+            let pointerX = null;
+            let pointerY = null;
+
+            function buildParticles() {
+                particles.length = 0;
+                for (let i = 0; i < particleCount; i += 1) {
+                    particles.push({
+                        x: p.random(p.width),
+                        y: p.random(p.height),
+                        vx: p.random(-0.35, 0.35),
+                        vy: p.random(-0.35, 0.35),
+                        size: p.random(1.2, 3.2)
+                    });
+                }
+            }
+
+            function wrapParticle(part) {
+                if (part.x < -10) part.x = p.width + 10;
+                if (part.x > p.width + 10) part.x = -10;
+                if (part.y < -10) part.y = p.height + 10;
+                if (part.y > p.height + 10) part.y = -10;
+            }
+
+            p.setup = () => {
+                const canvas = p.createCanvas(container.offsetWidth, container.offsetHeight);
+                canvas.parent(container);
+                buildParticles();
+                p.noStroke();
+            };
+
+            p.draw = () => {
+                p.background(7, 19, 33, 220);
+
+                for (let i = 0; i < particles.length; i += 1) {
+                    const part = particles[i];
+
+                    if (pointerX !== null && pointerY !== null) {
+                        const dx = pointerX - part.x;
+                        const dy = pointerY - part.y;
+                        const distSq = dx * dx + dy * dy;
+                        const forceRadius = 180;
+                        if (distSq > 1 && distSq < forceRadius * forceRadius) {
+                            const dist = Math.sqrt(distSq);
+                            const factor = (forceRadius - dist) / forceRadius;
+                            part.vx -= (dx / dist) * factor * 0.08;
+                            part.vy -= (dy / dist) * factor * 0.08;
+                        }
+                    }
+
+                    part.vx *= 0.985;
+                    part.vy *= 0.985;
+                    part.x += part.vx;
+                    part.y += part.vy;
+                    wrapParticle(part);
+
+                    p.fill(255, 255, 255, 145);
+                    p.circle(part.x, part.y, part.size);
+
+                    for (let j = i + 1; j < particles.length; j += 1) {
+                        const other = particles[j];
+                        const d = p.dist(part.x, part.y, other.x, other.y);
+                        if (d < 120) {
+                            const alpha = p.map(d, 0, 120, 65, 0);
+                            p.stroke(125, 208, 255, alpha);
+                            p.strokeWeight(1);
+                            p.line(part.x, part.y, other.x, other.y);
+                            p.noStroke();
+                        }
+                    }
+                }
+            };
+
+            p.windowResized = () => {
+                p.resizeCanvas(container.offsetWidth, container.offsetHeight);
+                buildParticles();
+            };
+
+            p.mouseMoved = () => {
+                pointerX = p.mouseX;
+                pointerY = p.mouseY;
+            };
+
+            p.touchMoved = () => {
+                if (p.touches.length > 0) {
+                    pointerX = p.touches[0].x;
+                    pointerY = p.touches[0].y;
+                }
+                return false;
+            };
+
+            p.mouseOut = () => {
+                pointerX = null;
+                pointerY = null;
+            };
+        };
+    }
+
+    function createBoidsSketch() {
+        return (p) => {
+            const boids = [];
+            const boidCount = 90;
+            const perceptionRadius = 58;
+            const maxSpeed = 2.6;
+            const maxForce = 0.06;
+
+            function clampMagnitude(vector, max) {
+                const mag = Math.sqrt(vector.x * vector.x + vector.y * vector.y);
+                if (mag > max && mag > 0) {
+                    vector.x = (vector.x / mag) * max;
+                    vector.y = (vector.y / mag) * max;
+                }
+            }
+
+            function makeBoid() {
+                return {
+                    x: p.random(p.width),
+                    y: p.random(p.height),
+                    vx: p.random(-1, 1),
+                    vy: p.random(-1, 1)
+                };
+            }
+
+            function wrap(boid) {
+                if (boid.x < -8) boid.x = p.width + 8;
+                if (boid.x > p.width + 8) boid.x = -8;
+                if (boid.y < -8) boid.y = p.height + 8;
+                if (boid.y > p.height + 8) boid.y = -8;
+            }
+
+            function steerTowardMouse(boid) {
+                if (p.mouseX < 0 || p.mouseX > p.width || p.mouseY < 0 || p.mouseY > p.height) {
+                    return { x: 0, y: 0 };
+                }
+
+                const dx = p.mouseX - boid.x;
+                const dy = p.mouseY - boid.y;
+                const dSq = dx * dx + dy * dy;
+                if (dSq < 1) {
+                    return { x: 0, y: 0 };
+                }
+
+                const d = Math.sqrt(dSq);
+                const desiredVx = (dx / d) * maxSpeed;
+                const desiredVy = (dy / d) * maxSpeed;
+                const steer = {
+                    x: desiredVx - boid.vx,
+                    y: desiredVy - boid.vy
+                };
+                clampMagnitude(steer, maxForce * 2.8);
+                return steer;
+            }
+
+            p.setup = () => {
+                const canvas = p.createCanvas(container.offsetWidth, container.offsetHeight);
+                canvas.parent(container);
+
+                for (let i = 0; i < boidCount; i += 1) {
+                    boids.push(makeBoid());
+                }
+            };
+
+            p.draw = () => {
+                p.background(10, 20, 34, 225);
+
+                for (let i = 0; i < boids.length; i += 1) {
+                    const boid = boids[i];
+                    let alignX = 0;
+                    let alignY = 0;
+                    let cohX = 0;
+                    let cohY = 0;
+                    let sepX = 0;
+                    let sepY = 0;
+                    let neighbors = 0;
+
+                    for (let j = 0; j < boids.length; j += 1) {
+                        if (i === j) continue;
+                        const other = boids[j];
+                        const dx = other.x - boid.x;
+                        const dy = other.y - boid.y;
+                        const dSq = dx * dx + dy * dy;
+
+                        if (dSq > 0 && dSq < perceptionRadius * perceptionRadius) {
+                            neighbors += 1;
+                            alignX += other.vx;
+                            alignY += other.vy;
+                            cohX += other.x;
+                            cohY += other.y;
+
+                            const dist = Math.sqrt(dSq);
+                            const repel = (perceptionRadius - dist) / perceptionRadius;
+                            sepX -= (dx / dist) * repel;
+                            sepY -= (dy / dist) * repel;
+                        }
+                    }
+
+                    let ax = 0;
+                    let ay = 0;
+
+                    if (neighbors > 0) {
+                        alignX /= neighbors;
+                        alignY /= neighbors;
+                        cohX = cohX / neighbors - boid.x;
+                        cohY = cohY / neighbors - boid.y;
+                        sepX /= neighbors;
+                        sepY /= neighbors;
+
+                        const align = { x: alignX - boid.vx, y: alignY - boid.vy };
+                        const cohesion = { x: cohX, y: cohY };
+                        const separation = { x: sepX, y: sepY };
+
+                        clampMagnitude(align, maxForce);
+                        clampMagnitude(cohesion, maxForce);
+                        clampMagnitude(separation, maxForce * 1.4);
+
+                        ax += align.x * 0.9 + cohesion.x * 0.5 + separation.x * 1.2;
+                        ay += align.y * 0.9 + cohesion.y * 0.5 + separation.y * 1.2;
+                    }
+
+                    const mouseSteer = steerTowardMouse(boid);
+                    ax += mouseSteer.x * 1.8;
+                    ay += mouseSteer.y * 1.8;
+
+                    boid.vx += ax;
+                    boid.vy += ay;
+                    const speed = Math.sqrt(boid.vx * boid.vx + boid.vy * boid.vy);
+                    if (speed > maxSpeed) {
+                        boid.vx = (boid.vx / speed) * maxSpeed;
+                        boid.vy = (boid.vy / speed) * maxSpeed;
+                    }
+
+                    boid.x += boid.vx;
+                    boid.y += boid.vy;
+                    wrap(boid);
+
+                    const heading = Math.atan2(boid.vy, boid.vx);
+                    p.push();
+                    p.translate(boid.x, boid.y);
+                    p.rotate(heading);
+                    p.noStroke();
+                    p.fill(156, 224, 255, 190);
+                    p.beginShape();
+                    p.vertex(6, 0);
+                    p.vertex(-4, 3.2);
+                    p.vertex(-2.7, 0);
+                    p.vertex(-4, -3.2);
+                    p.endShape(p.CLOSE);
+                    p.pop();
+                }
+            };
+
+            p.windowResized = () => {
+                p.resizeCanvas(container.offsetWidth, container.offsetHeight);
+                boids.length = 0;
+                for (let i = 0; i < boidCount; i += 1) {
+                    boids.push(makeBoid());
+                }
+            };
+        };
+    }
+
+    function createOrbitalFieldSketch() {
+        return (p) => {
+            const nodes = [];
+            const ringCount = 4;
+            const perRing = 26;
+            let centerX = 0;
+            let centerY = 0;
+
+            function initNodes() {
+                nodes.length = 0;
+                centerX = p.width / 2;
+                centerY = p.height / 2;
+
+                for (let ring = 1; ring <= ringCount; ring += 1) {
+                    for (let i = 0; i < perRing; i += 1) {
+                        const baseAngle = (Math.PI * 2 * i) / perRing;
+                        nodes.push({
+                            ring,
+                            angle: baseAngle,
+                            speed: p.random(0.0018, 0.0055) * (ring % 2 === 0 ? 1 : -1),
+                            radius: p.min(p.width, p.height) * (0.08 + ring * 0.09),
+                            size: p.random(1.5, 3.8)
+                        });
+                    }
+                }
+            }
+
+            p.setup = () => {
+                const canvas = p.createCanvas(container.offsetWidth, container.offsetHeight);
+                canvas.parent(container);
+                initNodes();
+            };
+
+            p.draw = () => {
+                p.background(8, 12, 28, 215);
+
+                const targetX = p.mouseX || centerX;
+                const targetY = p.mouseY || centerY;
+                centerX += (targetX - centerX) * 0.015;
+                centerY += (targetY - centerY) * 0.015;
+
+                p.noStroke();
+                p.fill(80, 170, 255, 18);
+                p.circle(centerX, centerY, p.min(p.width, p.height) * 0.46);
+
+                const points = [];
+                for (let i = 0; i < nodes.length; i += 1) {
+                    const n = nodes[i];
+                    n.angle += n.speed;
+                    const x = centerX + Math.cos(n.angle) * n.radius;
+                    const y = centerY + Math.sin(n.angle) * n.radius;
+                    points.push({ x, y, ring: n.ring, size: n.size });
+                }
+
+                for (let i = 0; i < points.length; i += 1) {
+                    const point = points[i];
+                    p.fill(188, 226, 255, 160);
+                    p.circle(point.x, point.y, point.size);
+                }
+
+                p.strokeWeight(1);
+                for (let i = 0; i < points.length; i += 1) {
+                    for (let j = i + 1; j < points.length; j += 1) {
+                        if (points[i].ring !== points[j].ring) continue;
+                        const d = p.dist(points[i].x, points[i].y, points[j].x, points[j].y);
+                        if (d < 55) {
+                            const alpha = p.map(d, 0, 55, 72, 0);
+                            p.stroke(110, 190, 255, alpha);
+                            p.line(points[i].x, points[i].y, points[j].x, points[j].y);
+                        }
+                    }
+                }
+            };
+
+            p.windowResized = () => {
+                p.resizeCanvas(container.offsetWidth, container.offsetHeight);
+                initNodes();
+            };
+        };
+    }
+
+    function createGameOfLifeSketch() {
+        return (p) => {
+            const cellSize = 20;
+            let cols = 0;
+            let rows = 0;
+            let grid = [];
+            let nextGrid = [];
+
+            function createEmptyGrid(c, r) {
+                const arr = new Array(c);
+                for (let x = 0; x < c; x += 1) {
+                    arr[x] = new Array(r).fill(0);
+                }
+                return arr;
+            }
+
+            function randomizeGrid(fillRate) {
+                for (let x = 0; x < cols; x += 1) {
+                    for (let y = 0; y < rows; y += 1) {
+                        grid[x][y] = p.random() < fillRate ? 1 : 0;
+                    }
+                }
+            }
+
+            function resizeWorld() {
+                cols = Math.max(1, Math.floor(p.width / cellSize));
+                rows = Math.max(1, Math.floor(p.height / cellSize));
+                grid = createEmptyGrid(cols, rows);
+                nextGrid = createEmptyGrid(cols, rows);
+                randomizeGrid(0.17);
+            }
+
+            function countNeighbors(x, y) {
+                let total = 0;
+                for (let dx = -1; dx <= 1; dx += 1) {
+                    for (let dy = -1; dy <= 1; dy += 1) {
+                        if (dx === 0 && dy === 0) continue;
+                        const nx = (x + dx + cols) % cols;
+                        const ny = (y + dy + rows) % rows;
+                        total += grid[nx][ny];
+                    }
+                }
+                return total;
+            }
+
+            function step() {
+                for (let x = 0; x < cols; x += 1) {
+                    for (let y = 0; y < rows; y += 1) {
+                        const alive = grid[x][y] === 1;
+                        const neighbors = countNeighbors(x, y);
+                        if (alive && (neighbors < 2 || neighbors > 3)) {
+                            nextGrid[x][y] = 0;
+                        } else if (!alive && neighbors === 3) {
+                            nextGrid[x][y] = 1;
+                        } else {
+                            nextGrid[x][y] = grid[x][y];
+                        }
+                    }
+                }
+
+                const temp = grid;
+                grid = nextGrid;
+                nextGrid = temp;
+            }
+
+            function seedFromPointer(px, py) {
+                if (px < 0 || py < 0 || px > p.width || py > p.height) return;
+                const cx = Math.floor(px / cellSize);
+                const cy = Math.floor(py / cellSize);
+
+                for (let ox = -1; ox <= 1; ox += 1) {
+                    for (let oy = -1; oy <= 1; oy += 1) {
+                        const nx = cx + ox;
+                        const ny = cy + oy;
+                        if (nx >= 0 && nx < cols && ny >= 0 && ny < rows) {
+                            grid[nx][ny] = 1;
+                        }
+                    }
+                }
+            }
+
+            p.setup = () => {
+                const canvas = p.createCanvas(container.offsetWidth, container.offsetHeight);
+                canvas.parent(container);
+                resizeWorld();
+                p.noStroke();
+            };
+
+            p.draw = () => {
+                p.background(0, 0, 0, 235);
+
+                if (p.frameCount % 3 === 0) {
+                    step();
+                }
+
+                for (let x = 0; x < cols; x += 1) {
+                    for (let y = 0; y < rows; y += 1) {
+                        if (grid[x][y] === 1) {
+                            p.fill(255, 255, 255, 220);
+                            p.rect(x * cellSize, y * cellSize, cellSize - 1, cellSize - 1);
+                        }
+                    }
+                }
+            };
+
+            p.mouseMoved = () => {
+                seedFromPointer(p.mouseX, p.mouseY);
+            };
+
+            p.mouseDragged = () => {
+                seedFromPointer(p.mouseX, p.mouseY);
+            };
+
+            p.touchMoved = () => {
+                for (let i = 0; i < p.touches.length; i += 1) {
+                    seedFromPointer(p.touches[i].x, p.touches[i].y);
+                }
+                return false;
+            };
+
+            p.windowResized = () => {
+                p.resizeCanvas(container.offsetWidth, container.offsetHeight);
+                resizeWorld();
+            };
+        };
+    }
+
+    const variants = [
+        { name: "Particle Web", rarity: "Common", weight: 52, create: createParticleWebSketch },
+        { name: "Boids Swarm", rarity: "Rare", weight: 28, create: createBoidsSketch },
+        { name: "Orbital Field", rarity: "Epic", weight: 14, create: createOrbitalFieldSketch },
+        { name: "Game of Life", rarity: "Legendary", weight: 6, create: createGameOfLifeSketch }
+    ];
+
+    const selected = pickWeightedVariant(variants);
+    container.setAttribute("data-animation", selected.name);
+    container.setAttribute("data-rarity", selected.rarity);
+    new p5(selected.create());
+
+    // Useful for debugging and checking rarity distribution in browser devtools.
+    console.log("Hero animation:", selected.name, "[" + selected.rarity + "]");
+})();
+</script>
 
 </body>
 </html>
