@@ -5,8 +5,31 @@
         background-color: #0a1119;
         color: #fff;
     }
+
+    .footer-socials {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .footer-socials a {
+        color: #8fd3ff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .footer-socials a:hover {
+        text-decoration: underline;
+    }
 </style>
 
 <footer>
     <p>© {{ site.time | date: "%Y" }} Capynetics</p>
+    <div class="footer-socials" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/johnata-brayan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/johnatabrayan/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://github.com/Capynetics" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
 </footer>

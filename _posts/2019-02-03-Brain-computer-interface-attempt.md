@@ -1,6 +1,7 @@
 ---
 layout: new_post
 title:  "Brain-computer interface attempt"
+author: Johnata Brayan
 image: assets/2019-02-03-Brain-computer-interface-attempt/2019-02-03-Brain-computer-interface-attempt.png
 date:   2019-02-03
 categories: General

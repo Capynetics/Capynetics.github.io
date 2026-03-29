@@ -1,6 +1,7 @@
 ---
 layout: new_post
 title:  "Terminator sunnies"
+author: Johnata Brayan
 image: assets/2019-07-19-Terminator-sunnies/2019-07-19-Terminator-sunnies.png
 date:   2019-07-19 
 categories: General

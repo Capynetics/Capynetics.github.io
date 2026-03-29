@@ -1,6 +1,7 @@
 ---
 layout: new_post
 title:  "Different Technologies for digitally copying objects"
+author: Johnata Brayan
 image: assets/2019-02-26-Different-Technologies-for-digitally-copying-objects/2019-02-26-Different-Technologies-for-digitally-copying-objects.png
 date:   2019-02-26 
 categories: General

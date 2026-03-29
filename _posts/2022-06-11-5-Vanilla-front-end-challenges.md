@@ -1,6 +1,7 @@
 ---
 layout: new_post
 title:  "5 Vanilla front-end challenges"
+author: Johnata Brayan
 image: assets/2022-06-11-5-Vanilla-front-end-challenges/2022-06-11-5-Vanilla-front-end-challenges.png
 date:   2022-06-11
 categories: General

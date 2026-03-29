@@ -1,6 +1,7 @@
 ---
 layout: new_post
 title:  "Tactical MOD for the CASIO f-91w"
+author: Johnata Brayan
 image: assets/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w.png
 date:   2019-07-14 
 categories: General

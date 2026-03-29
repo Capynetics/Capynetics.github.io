@@ -1,6 +1,7 @@
 ---
 layout: new_post
 title:  "Review of yellow’s electric scooter-sharing system"
+author: Johnata Brayan
 image: assets/2019-09-10-Review-of-yellows-electric-scooter-sharing-system/2019-09-10-Review-of-yellows-electric-scooter-sharing-system.png
 date:   2019-09-10 
 categories: General

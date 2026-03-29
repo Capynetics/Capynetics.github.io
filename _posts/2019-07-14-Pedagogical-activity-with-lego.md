@@ -1,6 +1,7 @@
 ---
 layout: new_post
 title:  "Pedagogical activity with lego"
+author: Johnata Brayan
 image: assets/2019-07-14-Pedagogical-activity-with-lego/2019-07-14-Pedagogical-activity-with-lego.jpg
 date:   2019-07-14 
 categories: General
