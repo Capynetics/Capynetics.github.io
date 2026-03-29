@@ -36,6 +36,7 @@
             position: absolute;
             inset: 0;
             z-index: -1;
+            touch-action: pan-y;
         }
 
         .hero-canvas canvas {
@@ -236,12 +237,16 @@
                 pointerY = p.mouseY;
             };
 
-            p.touchMoved = () => {
+            p.touchStarted = () => {
                 if (p.touches.length > 0) {
                     pointerX = p.touches[0].x;
                     pointerY = p.touches[0].y;
                 }
-                return false;
+            };
+
+            p.touchEnded = () => {
+                pointerX = null;
+                pointerY = null;
             };
 
             p.mouseOut = () => {
@@ -608,11 +613,10 @@
                 seedFromPointer(p.mouseX, p.mouseY);
             };
 
-            p.touchMoved = () => {
+            p.touchStarted = () => {
                 for (let i = 0; i < p.touches.length; i += 1) {
                     seedFromPointer(p.touches[i].x, p.touches[i].y);
                 }
-                return false;
             };
 
             p.windowResized = () => {
