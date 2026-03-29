@@ -130,6 +130,63 @@
       font-size: 1.08rem;
     }
 
+    .post-content h2,
+    .post-content h3,
+    .post-content h4 {
+      scroll-margin-top: 96px;
+    }
+
+    .post-toc {
+      margin: 1.2rem 0 2rem 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .post-toc[hidden] {
+      display: none;
+    }
+
+    .post-toc-title {
+      margin: 0 0 0.6rem 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.94rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+    }
+
+    .post-toc-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .post-toc-link {
+      display: inline-block;
+      line-height: 1.35;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .post-toc-link:hover {
+      text-decoration: underline;
+    }
+
+    .post-toc-link.level-h3 {
+      padding-left: 1rem;
+      font-size: 0.96rem;
+    }
+
+    .post-toc-link.level-h4 {
+      padding-left: 2rem;
+      font-size: 0.92rem;
+    }
+
     .post-content > :first-child {
       margin-top: 0;
     }
@@ -377,6 +434,11 @@
   </div>
   {% endif %}
 
+  <nav id="post-toc" class="post-toc" aria-label="Table of contents" hidden>
+    <h2 class="post-toc-title">On this page</h2>
+    <ul id="post-toc-list" class="post-toc-list"></ul>
+  </nav>
+
   <article class="post-content">
     {{ content }}
   </article>
@@ -402,15 +464,64 @@
 <script>
   (() => {
     const progressBar = document.getElementById('reading-progress-bar');
-    if (!progressBar) return;
+    const toc = document.getElementById('post-toc');
+    const tocList = document.getElementById('post-toc-list');
+    const contentRoot = document.querySelector('.post-content');
+
+    const slugify = (text) => {
+      return text
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+    };
+
+    const buildToc = () => {
+      if (!toc || !tocList || !contentRoot) return;
+
+      const headings = contentRoot.querySelectorAll('h2, h3, h4');
+      if (!headings.length) {
+        toc.hidden = true;
+        return;
+      }
+
+      const usedIds = new Set();
+      tocList.innerHTML = '';
+
+      headings.forEach((heading, index) => {
+        let id = heading.id || slugify(heading.textContent || 'section');
+        if (!id) id = `section-${index + 1}`;
+        const baseId = id;
+        let suffix = 2;
+        while (usedIds.has(id) || document.getElementById(id) && document.getElementById(id) !== heading) {
+          id = `${baseId}-${suffix}`;
+          suffix += 1;
+        }
+        usedIds.add(id);
+        heading.id = id;
+
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `#${id}`;
+        link.textContent = heading.textContent || 'Section';
+        link.className = `post-toc-link level-${heading.tagName.toLowerCase()}`;
+        item.appendChild(link);
+        tocList.appendChild(item);
+      });
+
+      toc.hidden = false;
+    };
 
     const updateProgress = () => {
+      if (!progressBar) return;
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       const progress = maxScroll > 0 ? Math.min(scrollTop / maxScroll, 1) : 0;
       progressBar.style.width = `${progress * 100}%`;
     };
 
+    buildToc();
     updateProgress();
     window.addEventListener('scroll', updateProgress, { passive: true });
     window.addEventListener('resize', updateProgress);
