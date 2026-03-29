@@ -1,7 +1,7 @@
 ---
 layout: new_post
 title:  "Tactical MOD for the CASIO f-91w"
-image: assets/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w.png
+image: assets/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w.png
 date:   2019-07-14 
 categories: General
 ---
@@ -39,34 +39,34 @@ To accomplish this I combined two tutorials, the first is about changing the wri
 After watching both videos and paying attention to the pictures below you will be able to follow the process I used to make the modification.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/CASIO1.jpg)
+![Image]({{ site.baseurl }}/assets/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w/CASIO1.jpg)
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/CASIO2.jpg)
+![Image]({{ site.baseurl }}/assets/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w/CASIO2.jpg)
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/CASIO3.jpg)
+![Image]({{ site.baseurl }}/assets/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w/CASIO3.jpg)
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/CASIO4.jpg)
+![Image]({{ site.baseurl }}/assets/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w/CASIO4.jpg)
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/CASIO5.jpg)
+![Image]({{ site.baseurl }}/assets/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w/CASIO5.jpg)
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/CASIO6.jpg)
+![Image]({{ site.baseurl }}/assets/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w/CASIO6.jpg)
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/CASIO7.jpg)
+![Image]({{ site.baseurl }}/assets/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w/CASIO7.jpg)
 {: refdef}
 
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/CASIO9.jpg)
+![Image]({{ site.baseurl }}/assets/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w/CASIO9.jpg)
 {: refdef}

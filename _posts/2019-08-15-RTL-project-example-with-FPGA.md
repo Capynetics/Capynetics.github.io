@@ -1,7 +1,7 @@
 ---
 layout: new_post
 title:  "RTL project example with FPGA"
-image: assets/2019-08-15-RTL-project-example-with-FPGA.jpg
+image: assets/2019-08-15-RTL-project-example-with-FPGA/2019-08-15-RTL-project-example-with-FPGA.jpg
 date:   2019-08-15 
 categories: General
 ---
@@ -25,28 +25,28 @@ In chapter five of Frank Vahid's book "Digital Design", the author enumerates th
 Down below are each and every one of the four diagrams representing every phase of the aforementioned process.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/The_high-level_finite_state_machine.png)
+![Image]({{ site.baseurl }}/assets/2019-08-15-RTL-project-example-with-FPGA/The_high-level_finite_state_machine.png)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *The high-level finite state machine*
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/The_operational_block.png)
+![Image]({{ site.baseurl }}/assets/2019-08-15-RTL-project-example-with-FPGA/The_operational_block.png)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *The operational block*
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/Connection_diagram_between_the_operational_and_the_control_block.png)
+![Image]({{ site.baseurl }}/assets/2019-08-15-RTL-project-example-with-FPGA/Connection_diagram_between_the_operational_and_the_control_block.png)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Connection diagram between the operational and the control block*
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/The_Low-level_finite_state_machine.png)
+![Image]({{ site.baseurl }}/assets/2019-08-15-RTL-project-example-with-FPGA/The_Low-level_finite_state_machine.png)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *The Low-level finite state machine*
@@ -61,7 +61,7 @@ Once the projecting phase was done all the necessary information for executing t
 Once the code was ready and tested the next step was to upload it to the FPGA. The FPGA KIT EE02 (with an Altera EP2C5T144) was used. An Arduino Mega was used to read the analog signals and translate them to a 16-bit digital signal. An LCD display was added to the Arduino to view the variables in real-time. The clear Button was connected directly to the FPGA board, but the buzzer (warning signal) was connected to the Arduino because it worked with 5V and the FPGA's logic levels were 3.3V.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/vahid_block_diagram.png)
+![Image]({{ site.baseurl }}/assets/2019-08-15-RTL-project-example-with-FPGA/vahid_block_diagram.png)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Block diagram*

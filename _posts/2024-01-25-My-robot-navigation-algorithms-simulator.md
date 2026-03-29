@@ -2,12 +2,12 @@
 layout: new_post
 title:  "My robot navigation algorithms simulator"
 author: Johnata Brayan
-image: assets/2024-01-25-My-robot-navigation-algorithms-simulator.png
+image: assets/2024-01-25-My-robot-navigation-algorithms-simulator/2024-01-25-My-robot-navigation-algorithms-simulator.png
 date:   2024-01-25
 categories: General
 ---
 
-If you are studing about mobile robots I recommend you take a look at my [online path-planning algorithms simulator](https://capynetics.github.io/assets/pathsim/) where you can test different path-planning algorithms in different scenarios. The algorithms available are:
+If you are studing about mobile robots I recommend you take a look at my [online path-planning algorithms simulator](https://capynetics.github.io/assets/2024-01-25-My-robot-navigation-algorithms-simulator/pathsim/) where you can test different path-planning algorithms in different scenarios. The algorithms available are:
 
 - bug0
 - bug1

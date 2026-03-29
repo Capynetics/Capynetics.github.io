@@ -1,7 +1,7 @@
 ---
 layout: new_post
 title:  "Review of yellow’s electric scooter-sharing system"
-image: assets/2019-09-10-Review-of-yellow’s-electric-scooter-sharing-system.png
+image: assets/2019-09-10-Review-of-yellows-electric-scooter-sharing-system/2019-09-10-Review-of-yellows-electric-scooter-sharing-system.png
 date:   2019-09-10 
 categories: General
 ---
@@ -15,7 +15,7 @@ When the startup [Yellow](https://www.yellow.app/) started operating its electri
 Last Sunday morning I was at the city center and, after seeing one of the yellow scooters on the sidewalk, I realized I had the perfect opportunity of trying one of them going back to university. After some time looking for a fully charged one, I found it close to Praça Sete and took it all the way to UFMG.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/My_route.png)
+![Image]({{ site.baseurl }}/assets/2019-09-10-Review-of-yellows-electric-scooter-sharing-system/My_route.png)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *My route*
@@ -26,7 +26,7 @@ Here I got to my first question: "Can I even take this route?". Some days earlie
 Once I knew I was good to go, I unlocked the scooter using the app (which was fast and easy) and started my journey. Driving a Yellow scooter is fun and easy. I enjoyed very much my trip through the empty Sunday morning city center streets until I almost feel due to a hole in the middle of the sidewalk, as seen below.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/The_hole_that_almost_made_me_fall.jpg)
+![Image]({{ site.baseurl }}/assets/2019-09-10-Review-of-yellows-electric-scooter-sharing-system/The_hole_that_almost_made_me_fall.jpg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *The hole that almost made me fall*
@@ -37,7 +37,7 @@ Once I remembered that the public infrastructure of Brazilian cities is a far cr
 At the residential area cited above, I was able to test the scooter against a very steep climb. The scooter started doing great, but by the end of the climb it gave up and I needed to help it pushing against the floor with my foot. Once I was at the top, I then had the chance to go down the hill as fast as I could. That was one of the most fun parts of the whole trip and I could gauge the scooter maximum speed, which is electronically limited to 20 Km/h.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/Up_the_hill_and_then_down_the_hill.png)
+![Image]({{ site.baseurl }}/assets/2019-09-10-Review-of-yellows-electric-scooter-sharing-system/Up_the_hill_and_then_down_the_hill.png)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Up the hill, and then down the hill*
@@ -46,7 +46,7 @@ At the residential area cited above, I was able to test the scooter against a ve
 After going all the way through the residential area I got to the last part of my trip, going all the way up Presidente Antonio Carlos Avenue until the finishing point of my journey. I had a great time zipping up the large and continuous sidewalks of the avenue. It was all fun and games until I got to an area paved with hexagonal cement tiles where the rough terrain changed my smooth ride into a continuous vibration. Suddenly it felt like I was driving a soviet-era farming tractor, not a scooter. My hand's phalanx bones were still sore 72 hours after my ride. These scooters definitely are in need of a good damping system.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/Hexagonal_tiles_that_gave_me_a_sore_hand.jpg)
+![Image]({{ site.baseurl }}/assets/2019-09-10-Review-of-yellows-electric-scooter-sharing-system/Hexagonal_tiles_that_gave_me_a_sore_hand.jpg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Hexagonal tiles that gave me a sore hand*
@@ -55,7 +55,7 @@ After going all the way through the residential area I got to the last part of m
 During this part, also, the app started finishing the trip by itself, so to finish my route I got to unlock the scooter 2 more times (remembering that I paid R$ 3,00 only to unlock it every time!!!). Well then, After a rough but fun trip, I finally got to my destination at UFMG.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/The_end_of_my_route.jpg)
+![Image]({{ site.baseurl }}/assets/2019-09-10-Review-of-yellows-electric-scooter-sharing-system/The_end_of_my_route.jpg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *The end of my route*
@@ -66,7 +66,7 @@ During this part, also, the app started finishing the trip by itself, so to fini
 After a short walk, I got home, where I could rest and think about what I just had been through.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/The_App's_summary_of_my_trip.png)
+![Image]({{ site.baseurl }}/assets/2019-09-10-Review-of-yellows-electric-scooter-sharing-system/The_Apps_summary_of_my_trip.png)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *The App's summary of my trip*

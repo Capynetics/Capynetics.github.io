@@ -1,7 +1,7 @@
 ---
 layout: new_post
 title:  "Recycling of air conditioning water"
-image: assets/2019-02-03-Recycling-of-air-conditioning-water.jpg
+image: assets/2019-02-03-Recycling-of-air-conditioning-water/2019-02-03-Recycling-of-air-conditioning-water.jpg
 date:   2019-02-03
 categories: General
 ---
@@ -13,7 +13,7 @@ This is a project that I and some colleagues made during the middle of vocationa
 Water is naturally condensated inside air conditioners, it is the water contained in the humid air getting cold and condensing. Usually, this water is just drained and wasted. The campus of the place I studied did not have a proper draining system, so the water of the air conditioning units simply spread on the floor and caused structural damage to the vicinities.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/Problems_caused_by_the_water.jpg)
+![Image]({{ site.baseurl }}/assets/2019-02-03-Recycling-of-air-conditioning-water/Problems_caused_by_the_water.jpg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Problems caused by the water*
@@ -25,7 +25,7 @@ To measure the water volume we built some measuring bottles. The measuring bottl
 Once the measuring bottles were ready we simply put them below the draining tube and waited regular time intervals to asses the water volume collected. We also measured the variation of temperature and air humidity during the measurements with the help of a thermohygrometer.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/Building_process.jpg)
+![Image]({{ site.baseurl }}/assets/2019-02-03-Recycling-of-air-conditioning-water/Building_process.jpg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Building process*

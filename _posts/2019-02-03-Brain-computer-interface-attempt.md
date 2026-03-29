@@ -1,7 +1,7 @@
 ---
 layout: new_post
 title:  "Brain-computer interface attempt"
-image: assets/2019-02-03-Brain-computer-interface-attempt.png
+image: assets/2019-02-03-Brain-computer-interface-attempt/2019-02-03-Brain-computer-interface-attempt.png
 date:   2019-02-03
 categories: General
 ---
@@ -15,7 +15,7 @@ This project tries to emulate the Neurosky headset, a headset that uses as refer
 The human brain can be divided into four main regions, each region having a specific function. The four parts are the frontal lobe, the parietal lobe, the occipital lobe, and the temporal lobe. This project tried to obtain the brain waves from the frontal lobe, which is located in the frontal part of the head (brow). The Frontal lobe is responsible for logical thinking, the control of impulses, judgment, production of language, problem-solving and social behaving.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/human_brain.png)
+![Image]({{ site.baseurl }}/assets/2019-02-03-Brain-computer-interface-attempt/human_brain.png)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Parts of the human brain*
@@ -41,7 +41,7 @@ There are other brain waves, but they are less important or less useful to this 
 In order to achieve our goal in this project, we used the basic instrumentation for the acquisition of electrical signals from the brain (EEG). The final configuration is presented in the block diagram below.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/BlocDiagram.png)
+![Image]({{ site.baseurl }}/assets/2019-02-03-Brain-computer-interface-attempt/BlocDiagram.png)
 {: refdef}
 
 {:refdef: style="text-align: center;"}
@@ -53,7 +53,7 @@ The electrodes used were electrodes common used in electrocardiogram exams. They
 In order to build an interface between the brain and the computer, we need to access the brain waves. To achieve that we used a circuit that provides us with one EEG channel. The circuit is presented below and was developed by Bernd Porr.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/CircuitoPorr.png)
+![Image]({{ site.baseurl }}/assets/2019-02-03-Brain-computer-interface-attempt/CircuitoPorr.png)
 {: refdef}
 
 {:refdef: style="text-align: center;"}
@@ -63,7 +63,7 @@ In order to build an interface between the brain and the computer, we need to ac
 This circuit is a two-stage amplifier. The first stage is an instrumentation amplifier. The instrumentation amplifier is a special operational amplifier that is low noise and high impedance; it’s also more precise and accurate. The second stage is a simple operational amplifier in the non-inverter configuration. Between these two amplifiers, there is a high-pass filter, this filter possible interferences of the cc current. After the signal passes through the instrumentation amplifier, the high pass filter and the operational amplifier it goes through a 60 Hz Notch filter. This last filter is a simple passive filter and is presented down below.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/NotchFilter.png)
+![Image]({{ site.baseurl }}/assets/2019-02-03-Brain-computer-interface-attempt/NotchFilter.png)
 {: refdef}
 
 {:refdef: style="text-align: center;"}
@@ -76,7 +76,7 @@ The data acquisition board that we used was a National Instruments DAQ NI USB-62
 LabView (Laboratory Virtual Instrument Engineering Workbench) is a famous development platform. It is programmed through a visual language based on the block with different functions that at first looks easy but soon we noticed that it follows the Bushnell’s law: “Easy to learn, hard to master”. With LabView, we were able to put the raw signal on the screen and also filter the bands of the brain waves specter. Then we developed an algorithm that, based on the specter of the brain waves and its interaction with the orbicular muscle, blinks an LED. The control of the LED can be interpreted as the control of one bit of information.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/AlgorithmBrain.png)
+![Image]({{ site.baseurl }}/assets/2019-02-03-Brain-computer-interface-attempt/AlgorithmBrain.png)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *LabView code*
@@ -88,7 +88,7 @@ The algorithm filters the Alfa and Beta waves from the brain waves specter, meas
 After the development of all the stages of the project and a lot of different tests, we developed the system described down below. For utilizing the developed system the user should be sitting in a comfortable chair and relaxing. Then, the electrodes must be placed in the mastoids (in order to work as reference points) and in the position Fp1 of the international 10-20 pattern for electrode placing. This pattern is presented down below.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/10–20-system.png)
+![Image]({{ site.baseurl }}/assets/2019-02-03-Brain-computer-interface-attempt/10–20-system.png)
 {: refdef}
 
 {:refdef: style="text-align: center;"}

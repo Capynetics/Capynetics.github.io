@@ -1,7 +1,7 @@
 ---
 layout: new_post
 title:  "Hacking an Xbox controller to build an immersive VR experience"
-image: assets/2019-02-06-Hacking-an-Xbox-controller-to-build-an-immersive-VR-experience.jpg
+image: assets/2019-02-06-Hacking-an-Xbox-controller-to-build-an-immersive-VR-experience/2019-02-06-Hacking-an-Xbox-controller-to-build-an-immersive-VR-experience.jpg
 date:   2019-02-06
 categories: General
 ---
@@ -13,7 +13,7 @@ This Project was developed some time ago for a client that gladly let me write s
 The controller was an XBOX ONE controller that vibrated through the asynchronous movement of two rumble motors inside of it. First of all, I need to know what kind of signal was being used to control this rumble motor. Happily, after a check with the oscilloscope, it was clear that those small electric motors were controlled by the good old PWM. Now I could simply use the “pulseIn()” Arduino function to extract this data in real-time. To send it to the cockpit I used a simple NRF24 module. The whole system was integrated into a PCB, powered by a 9V battery and placed in a special 3D printed enclosure. I designed this enclosure to fit at the back of the controller, the same way the battery cover would. At last, the controller part was done.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/3D_printed_enclosure.jpg)
+![Image]({{ site.baseurl }}/assets/2019-02-06-Hacking-an-Xbox-controller-to-build-an-immersive-VR-experience/3D_printed_enclosure.jpg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *3D printed enclosure*

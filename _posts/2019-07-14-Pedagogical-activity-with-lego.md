@@ -1,7 +1,7 @@
 ---
 layout: new_post
 title:  "Pedagogical activity with lego"
-image: assets/2019-07-14-Pedagogical-activity-with-lego.jpg
+image: assets/2019-07-14-Pedagogical-activity-with-lego/2019-07-14-Pedagogical-activity-with-lego.jpg
 date:   2019-07-14 
 categories: General
 ---
@@ -55,8 +55,8 @@ The activity book is supposed to be given to each child at the beginning of the 
 
 ## HTML instructions
 
-<iframe src="https://capynetics.github.io/assets/lego/" width="640" height="480"></iframe>
+<iframe src="https://capynetics.github.io/assets/2019-07-14-Pedagogical-activity-with-lego/lego/" width="640" height="480"></iframe>
 
-[CLICK HERE FOR INSTRUCTIONS IN FULL SCREEN](https://capynetics.github.io/assets/lego/)
+[CLICK HERE FOR INSTRUCTIONS IN FULL SCREEN](https://capynetics.github.io/assets/2019-07-14-Pedagogical-activity-with-lego/lego/)
 
 For help or insights about the class please feel free to comment in this post. I will answer as soon as I can

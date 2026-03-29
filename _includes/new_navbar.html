@@ -1,0 +1,197 @@
+<style>
+    .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #000000;
+    }
+
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        padding: 0.5rem 1rem;
+        min-height: 56px;
+        box-sizing: border-box;
+    }
+
+    .navbar-brand {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 1;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .navbar-brand-logo {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+        display: block;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-toggle-label {
+        display: none;
+        width: 40px;
+        height: 34px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 0.25rem;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background: transparent;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        position: relative;
+        width: 20px;
+        height: 2px;
+        background-color: #ffffff;
+        transition: transform 180ms ease, opacity 180ms ease;
+        content: "";
+    }
+
+    .nav-toggle-label span::before {
+        position: absolute;
+        top: -6px;
+        left: 0;
+    }
+
+    .nav-toggle-label span::after {
+        position: absolute;
+        top: 6px;
+        left: 0;
+    }
+
+    .navbar-nav {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .navbar-link {
+        color: rgba(255, 255, 255, 0.88);
+        text-decoration: none;
+        display: inline-block;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.2rem;
+        transition: color 150ms ease, background-color 150ms ease;
+        font-size: 1rem;
+    }
+
+    .navbar-link:hover,
+    .navbar-link:focus-visible {
+        color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.12);
+        outline: none;
+    }
+
+    .navbar-link.active {
+        color: #ffffff;
+        font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+        .navbar {
+            position: static;
+        }
+
+        .nav-container {
+            position: relative;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.4rem;
+        }
+
+        .navbar-brand {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .nav-toggle:checked ~ .navbar-brand {
+            top: 14px;
+            transform: translateX(-50%);
+        }
+
+        .nav-toggle-label {
+            display: inline-flex;
+            margin-left: 0;
+        }
+
+        .navbar-nav {
+            order: 3;
+            width: 100%;
+            gap: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            display: none;
+            padding-top: 0.35rem;
+        }
+
+        .navbar-link {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.55rem 0.65rem;
+        }
+
+        .nav-toggle:checked ~ .navbar-nav {
+            display: flex;
+        }
+
+        .nav-toggle:checked ~ .nav-toggle-label span {
+            transform: rotate(45deg);
+        }
+
+        .nav-toggle:checked ~ .nav-toggle-label span::before {
+            transform: rotate(90deg);
+            top: 0;
+        }
+
+        .nav-toggle:checked ~ .nav-toggle-label span::after {
+            opacity: 0;
+        }
+    }
+</style>
+
+<nav class="navbar" aria-label="Main navigation">
+    <div class="nav-container">
+        <input class="nav-toggle" id="nav-toggle" type="checkbox" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="{{ '/' | relative_url }}">
+            <img class="navbar-brand-logo" src="{{ '/assets/logo.png' | relative_url }}" alt="Capynetics logo">
+            <span>Capynetics</span>
+        </a>
+        <label class="nav-toggle-label" for="nav-toggle" aria-hidden="true"><span></span></label>
+        <div class="navbar-nav">
+            <a class="navbar-link {% if page.url == '/' %}active{% endif %}" href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
+            <a class="navbar-link {% if page.url == '/about/' or page.url == '/about.html' %}active{% endif %}" href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' or page.url == '/about.html' %}aria-current="page"{% endif %}>About</a>
+            <a class="navbar-link {% if page.layout == 'new_post' %}active{% endif %}" href="{% if page.url == '/' %}#posts{% else %}{{ '/#posts' | relative_url }}{% endif %}" {% if page.layout == 'new_post' %}aria-current="page"{% endif %}>Posts</a>
+        </div>
+    </div>
+</nav>

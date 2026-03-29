@@ -1,7 +1,7 @@
 ---
 layout: new_post
 title:  "Different Technologies for digitally copying objects"
-image: assets/2019-02-26-Different-Technologies-for-digitally-copying-objects.png
+image: assets/2019-02-26-Different-Technologies-for-digitally-copying-objects/2019-02-26-Different-Technologies-for-digitally-copying-objects.png
 date:   2019-02-26 
 categories: General
 ---
@@ -12,7 +12,7 @@ Every day the line between real and digital gets thinner. Virtual reality, augme
 If the object you need to copy has a simple geometry and/or is neither too small or too untextured for photogrammetry or 3D scanning I strongly suggest you simply look at it and model it in a 3D modeling software. It may look difficult at first, but 3D modeling is much easier to learn than it looks. There are countless methods and softwares to achieve the intended result. I personally recommend Autodesk’s Fusion 360 and parametric modeling. I will illustrate the processes with the following example: One of the pieces of my chess board got lost and I needed a new one. The piece was very small, making 3D scanning difficult, and had no texture, making photogrammetry hard, but had a very simple geometry, so I simply 3D modeled a new one based on one of the non-missing pieces, as shown below.
 
 {:refdef: style="text-align: center;"} 
-![Image]({{ site.baseurl }}/assets/horse.gif) 
+![Image]({{ site.baseurl }}/assets/2019-02-26-Different-Technologies-for-digitally-copying-objects/horse.gif) 
 {: refdef}
 
 {:refdef: style="text-align: center;"}
@@ -30,7 +30,7 @@ As seen above, with only some commands and photographic reference I was able to 
 If the object you are trying to copy has a geometry too complicated to be hand-copied in a 3D modeling software and you have no access to a 3D scanner a good technique I would recommend is photogrammetry. In this realm I recommend Meshroom. But remember, in order to photogrammetry to work properly you need an object that has a very textured surface. Things like stone or wooden structures are perfect. If you need to copy a shiny metallic or untextured object (like a human face) I wouldn’t recommend this technique. To exemplify this I will show how I used photogrammetry to digitally copy a statue in my university. This statue is a perfect example, it is big, has a rough surface and the pictures were taken on a cloudy day (avoiding hard shadows).
 
 {:refdef: style="text-align: center;"} 
-![Image]({{ site.baseurl }}/assets/venus.gif) 
+![Image]({{ site.baseurl }}/assets/2019-02-26-Different-Technologies-for-digitally-copying-objects/venus.gif) 
 {: refdef}
 
 {:refdef: style="text-align: center;"}
@@ -48,7 +48,7 @@ After taking the pictures I uploaded them to the easy to use Meshroom interface.
 3D scanners are very expensive. But if you are on a budget the XBOX 360 Kinect is a good substitute. It is a fairly capable 3D scanner when used with the Skanect software. You only need the proper adaptor, so you can plug the Kinect to Windows through USB. I use it every time I can scan something at home with complex or bio-inspired geometry. As a demonstration, I will copy a human bust. The process is quite simple, you plug the sensor to your PC, activate the software and then walk around the subject trying to catch as much detail as possible. Down below you can see the UI.
 
 {:refdef: style="text-align: center;"} 
-![Image]({{ site.baseurl }}/assets/ScaningProcess.png) 
+![Image]({{ site.baseurl }}/assets/2019-02-26-Different-Technologies-for-digitally-copying-objects/ScaningProcess.png) 
 {: refdef}
 {:refdef: style="text-align: center;"}
 Scaning process

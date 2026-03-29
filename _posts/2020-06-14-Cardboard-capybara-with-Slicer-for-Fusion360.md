@@ -1,7 +1,7 @@
 ---
 layout: new_post
 title:  "Cardboard capybara with Slicer for Fusion360"
-image: assets/2020-06-14-Cardboard-capybara-with-Slicer-for-Fusion360.jpg
+image: assets/2020-06-14-Cardboard-capybara-with-Slicer-for-Fusion360/2020-06-14-Cardboard-capybara-with-Slicer-for-Fusion360.jpg
 date:   2020-06-14 
 categories: General
 ---
@@ -19,7 +19,7 @@ A piece of good advice is to use "Radial Slices" instead of the default "Interlo
 Slicer for Fusion360 is generally used with a laser cutter. I did not have one. So I simply printed the shape of the pieces into A4 paper. Then I used the prints as molds to cut the cardboard by hand. Not necessary to mention that this is the most time consuming (and patience consuming) part of the whole process. You can see the result of all the cutting bellow.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/Cutted_pieces_of_the_sculpture.jpg)
+![Image]({{ site.baseurl }}/assets/2020-06-14-Cardboard-capybara-with-Slicer-for-Fusion360/Cutted_pieces_of_the_sculpture.jpg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Cutted pieces of the sculpture*

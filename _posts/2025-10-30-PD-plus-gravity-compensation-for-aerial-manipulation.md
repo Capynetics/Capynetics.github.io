@@ -2,7 +2,7 @@
 layout: new_post
 title:  PD plus gravity compensation for aerial manipulation
 author: Johnata Brayan
-image: assets/2025-10-30-PD-plus-gravity-compensation-for-aerial-manipulation.png
+image: assets/2025-10-30-PD-plus-gravity-compensation-for-aerial-manipulation/2025-10-30-PD-plus-gravity-compensation-for-aerial-manipulation.png
 date:   2025-10-30
 categories: General
 ---
@@ -16,14 +16,14 @@ A practical and elegant solution: **PD + gravity compensation**.
 When a manipulator is attached to a UAV, its movement alters the total inertia and center of gravity of the system. Traditional UAV controllers assume a rigid body and cannot handle these internal disturbances. A common solution adopted in aerial manipulation is to implement two different controllers, one for the arm and one for the drone, and then expect that the movement of one to be felt as a disturbance by the other. The strategy just mentioned may work when the inertia of the drone is much bigger than the inertia of the arm, but this is not always true. In the context of this project I had to put the *boomslang* arm on the *tilthex* drone, so I couldn’t make the simplification explained before.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/boomslang.png)
+![Image]({{ site.baseurl }}/assets/2025-10-30-PD-plus-gravity-compensation-for-aerial-manipulation/boomslang.png)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Boomslang*
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/tilthex.png)
+![Image]({{ site.baseurl }}/assets/2025-10-30-PD-plus-gravity-compensation-for-aerial-manipulation/tilthex.png)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Tilthex*

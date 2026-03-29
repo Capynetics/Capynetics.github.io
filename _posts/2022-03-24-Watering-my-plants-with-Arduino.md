@@ -1,7 +1,7 @@
 ---
 layout: new_post
 title:  "Watering my plants with Arduino"
-image: assets/2022-03-24-Watering-my-plants-with-Arduino.png
+image: assets/2022-03-24-Watering-my-plants-with-Arduino/2022-03-24-Watering-my-plants-with-Arduino.png
 date:   2022-03-24
 categories: General
 ---
@@ -15,7 +15,7 @@ In this short post, I will share how I made a watering system for my mom's plant
 For watering my plants with Arduino I started by gathering the necessary pieces. The project pieces are pretty straightforward. The Arduino is the brains of the project. In order to keep time, I am using a DS3231 real-time module. This way I can water the plants every day at the same time. To control water flow I am using a simple solenoid valve. To activate the solenoid valve I made an improvised relay module with a relay I had laying around. For debugging purposes, I added an LCD screen that states both the current time and valve activation time. The project was powered up by an old phone charger. The whole thing was embedded into a robust plastic box with an appropriate cutout for the display.
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/watering_Project_diagram.png)
+![Image]({{ site.baseurl }}/assets/2022-03-24-Watering-my-plants-with-Arduino/watering_Project_diagram.png)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Project diagram*

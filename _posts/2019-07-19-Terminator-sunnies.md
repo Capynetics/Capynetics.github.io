@@ -1,7 +1,7 @@
 ---
 layout: new_post
 title:  "Terminator sunnies"
-image: assets/2019-07-19-Terminator-sunnies.png
+image: assets/2019-07-19-Terminator-sunnies/2019-07-19-Terminator-sunnies.png
 date:   2019-07-19 
 categories: General
 ---
@@ -25,7 +25,7 @@ Down below you will find the electronics components necessary followed by a diag
 | Switch           | 1        |
 
 {:refdef: style="text-align: center;"}
-![Image]({{ site.baseurl }}/assets/terminator_circuit.png)
+![Image]({{ site.baseurl }}/assets/2019-07-19-Terminator-sunnies/terminator_circuit.png)
 {: refdef}
 
 {:refdef: style="text-align: center;"}
