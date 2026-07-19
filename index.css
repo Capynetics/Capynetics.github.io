@@ -1,0 +1,151 @@
+html, body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+}
+
+.hero-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    touch-action: pan-y;
+}
+
+.hero-canvas canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.hero img, .hero h1 {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.hero img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.hero-arrow {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35);
+    animation: heroArrowBounce 1.2s ease-out 1;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.hero-arrow span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes heroArrowBounce {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-12px);
+    }
+    45% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(12px);
+    }
+    70% {
+        transform: translateX(-50%) translateY(-8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
+    gap: 0;
+    width: 100%;
+}
+
+.thumb {
+    position: relative;
+    overflow: hidden;
+    height: 470px;
+    cursor: pointer;
+}
+
+.thumb .image {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.thumb:hover .image {
+    transform: scale(1.1);
+}
+
+.thumb::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(10, 17, 25, 0.9), transparent);
+}
+
+.thumb h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    color: #fff;
+    font-size: 1.4em;
+    z-index: 1;
+}
+
+@media (max-width: 600px) {
+    .hero h1 { font-size: 1.8em; }
+    .container { grid-template-columns: 1fr; }
+    .thumb { height: 250px; }
+}
