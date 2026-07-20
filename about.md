@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Hello! My name is Johnata Brayan, and this is my blog. I am currently a teacher at FAETEC, Brazil. My interests revolve mostly around science, technology, and history. I am a very curious person, which is why I chose to become a researcher in a field that allows me to explore many different areas: robotics.
+Hello! My name is Johnata Brayan, and this is my blog. I am currently a lecturer at FAETEC, Brazil. My interests revolve mostly around science, technology, and history. I am a very curious person, which is why I chose to become a researcher in a field that allows me to explore many different areas: robotics.
 
 Throughout my research, I have explored topics ranging from the [unconscious social effects of robot navigation](https://anr-navware.github.io/navwareset/) to the mathematics and physics of [robotic aerial manipulation](https://github.com/laas/WAMCtrl-genom3). I intend to continue studying different areas within robotics and finding better solutions to interesting and challenging problems.
 
