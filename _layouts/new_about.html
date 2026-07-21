@@ -121,11 +121,58 @@
       aspect-ratio: 1 / 1;
       border-radius: 50%;
       overflow: hidden;
+      position: relative;
       box-shadow: 0 12px 36px rgba(0,0,0,0.12);
       border: 1px solid rgba(0,0,0,0.08);
       background: #e9e9e9;
       touch-action: none;
       user-select: none;
+    }
+
+    .loading-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+      z-index: 10;
+      transition: opacity 240ms ease, visibility 240ms ease;
+    }
+
+    .loading-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loading-container {
+      width: 70%;
+      max-width: 260px;
+      text-align: center;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #333;
+    }
+
+    .loading-bar {
+      width: 100%;
+      height: 10px;
+      background: rgba(0,0,0,0.08);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .loading-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #7c3aed, #3b82f6);
+      transition: width 160ms linear;
+    }
+
+    .loading-text {
+      font-size: 13px;
+      opacity: 0.95;
     }
 
     .scene-shell canvas {
@@ -163,7 +210,16 @@
     <h1 id="about-title">{{ page.title }}</h1>
   </header>
   <div class="about-embed">
-    <div class="scene-shell" id="about-scene-shell"></div>
+    <div class="scene-shell" id="about-scene-shell">
+      <div class="loading-overlay" id="about-loading">
+        <div class="loading-container">
+          <div class="loading-text" id="about-loading-text">Loading 0%</div>
+          <div class="loading-bar" aria-hidden="true">
+            <div class="loading-bar-fill" id="about-loading-fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <article class="about-content">
     {{ content }}
@@ -200,6 +256,21 @@
   renderer.setSize(container.clientWidth, container.clientHeight);
   container.appendChild(renderer.domElement);
 
+  const loadingOverlay = document.getElementById('about-loading');
+  const loadingFill = document.getElementById('about-loading-fill');
+  const loadingText = document.getElementById('about-loading-text');
+
+  function setLoadingProgress(pct) {
+    const clamped = Math.max(0, Math.min(100, pct));
+    if (loadingFill) loadingFill.style.width = clamped + '%';
+    if (loadingText) loadingText.textContent = `Loading ${Math.round(clamped)}%`;
+  }
+
+  function hideLoading(delay = 120) {
+    if (!loadingOverlay) return;
+    setTimeout(() => loadingOverlay.classList.add('hidden'), delay);
+  }
+
   const ambient = new THREE.AmbientLight(0xffffff, 1.0);
   scene.add(ambient);
 
@@ -230,6 +301,9 @@
       model.position.set(0, 0, 0);
       model.scale.set(1, 1, 1);
       scene.add(model);
+      // Loaded: ensure the loading bar reaches 100% and hide it
+      setLoadingProgress(100);
+      hideLoading(220);
 
       const box = new THREE.Box3().setFromObject(model);
       const center = box.getCenter(new THREE.Vector3());
@@ -243,9 +317,24 @@
       camera.position.set(0, 0.1, distance);
       camera.lookAt(0, 0, 0);
     },
-    undefined,
+    // onProgress
+    (xhr) => {
+      if (xhr && xhr.lengthComputable) {
+        const pct = (xhr.loaded / xhr.total) * 100;
+        setLoadingProgress(pct);
+      } else if (xhr && xhr.loaded) {
+        // Unknown total: show KB loaded as a fallback
+        const kb = Math.round(xhr.loaded / 1024);
+        if (loadingText) loadingText.textContent = `Loaded ${kb} KB`;
+        // gently grow the bar a little to indicate activity
+        const est = Math.min(80, Math.log2(kb + 1) * 8);
+        setLoadingProgress(est);
+      }
+    },
     (err) => {
       console.error(err);
+      if (loadingText) loadingText.textContent = 'Load failed';
+      // don't hide automatically on error
     }
   );
 
