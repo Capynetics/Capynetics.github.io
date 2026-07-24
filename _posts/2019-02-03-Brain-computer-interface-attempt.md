@@ -103,7 +103,7 @@ After the correct placement of the electrodes, they are connected to the circuit
   <iframe
     width="560"
     height="315"
-    src="https://www.youtube.com/watch?v=oWBWINOvN8k&feature=youtu.be"
+    src="https://www.youtube-nocookie.com/embed/oWBWINOvN8k"
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
