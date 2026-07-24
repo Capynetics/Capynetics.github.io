@@ -36,7 +36,7 @@ Finally, after some common problems with faulty wiring and bugs in the code, eve
   <iframe
     width="560"
     height="315"
-    src="https://www.youtube.com/embed/80NFeifG4Qc?si=OpXl53mQ0dNjJ1Mu"
+    src="https://www.youtube-nocookie.com/embed/XR52tPJNHFk"
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

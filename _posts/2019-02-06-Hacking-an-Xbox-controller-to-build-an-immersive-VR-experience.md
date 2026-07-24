@@ -40,7 +40,7 @@ After correcting some programming bugs and short circuits in the PCB the whole t
   <iframe
     width="560"
     height="315"
-    src="https://www.youtube.com/embed/0OhnKIjpnJM?si=kcVE0FivwhcD2CMv"
+    src="https://www.youtube-nocookie.com/embed/odyzNf7H9kw"
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -15,7 +15,7 @@ By the end of the class, the child is supposed to have built a remote control ca
   <iframe
     width="560"
     height="315"
-    src="https://www.youtube.com/embed/RxYRpVedIoI"
+    src="https://www.youtube-nocookie.com/embed/CuJOH8m5BiE"
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

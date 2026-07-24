@@ -269,7 +269,7 @@ The proposed solution was implemented using the Python package [Pinocchio](https
   <iframe
     width="560"
     height="315"
-    src="https://www.youtube.com/embed/70RH7qEeW4M?si=oqLx0Kp5Di_I_8qQ"
+    src="https://www.youtube-nocookie.com/embed/d0Lu046xiAk"
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -282,7 +282,7 @@ The proposed solution was implemented using the Python package [Pinocchio](https
   <iframe
     width="560"
     height="315"
-    src="https://www.youtube.com/embed/14KexBg_nxY?si=jl1QgNOC92VIE0Vl"
+    src="https://www.youtube-nocookie.com/embed/2ogBpeBTxBc"
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -75,7 +75,7 @@ Down below you can see a timelapse of the examples in this article being 3D prin
   <iframe
     width="560"
     height="315"
-    src="https://www.youtube.com/embed/lEigBOboq-Q?si=Ow91ME5sdeZdyKcr"
+    src="https://www.youtube-nocookie.com/embed//iw5-r_GEoGk"
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
