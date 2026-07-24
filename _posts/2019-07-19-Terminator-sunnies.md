@@ -7,13 +7,13 @@ date:   2019-07-19
 categories: General
 ---
 
-This project is a pair of sunglasses I made during Halloween to go with the rest of my terminator costume. It is a simple LED taped to a Ray-Ban Wayfarer. If you are an experienced Arduino user this project will probably bore you, but if you are looking to get acquainted with it this is your chance to do it with style.
+This project started as a Halloween costume idea and turned into a tiny electronics build that was way more fun than it had any right to be. I wanted a pair of sunglasses that looked like they belonged to a Terminator, so I made a simple setup with a red LED hidden behind one lens and a little bit of Arduino logic to make it feel more dramatic. If you are already comfortable with Arduino, this may feel very simple, but it is a nice way to get started with a project that looks cool right away.
 
-I wanted to have sunglasses with that cool red glow of the classic Terminator movie poster. The most straightforward way of doing it was taping a red LED behind one of the lenses. I Couldn't decide if I wanted the light to blink or not, so I added a button to control it. I also couldn't decide the speed of the blinking, so I added a Knob to control it too.
+The goal was to get that classic red glow from the Terminator poster while keeping the whole thing light and wearable. I taped a red LED behind one lens, added a button so I could turn it on and off, and then added a potentiometer so I could control how fast the light blinked. It was a small build, but it had just enough customization to make it feel personal.
 
 ## The Hardware part
 
-Down below you will find the electronics components necessary followed by a diagram explaining how everything should be connected. More information on assembly can be found in the third part of this article.
+The parts for this build are pretty minimal, and the diagram below shows how everything connects. It is the kind of project that is simple enough to build quickly, but still gives you a nice sense of how basic circuits and microcontrollers can come together in a fun way.
 
 | Component         | Quantity |
 |------------------|----------|
@@ -35,13 +35,13 @@ Down below you will find the electronics components necessary followed by a diag
 
 ## The programing part
 
-The embedded code bellow is commented at an understandable level, but if you have any doubt don't hesitate to comment asking for help.
+The code below is commented in a straightforward way, so it should be easy to follow even if you are still getting used to Arduino. If something is unclear, feel free to ask in the comments.
 
 <script src="https://gist.github.com/SetpointCapybara/87c3f1235e6cb72a94d4b4cf674f0b1b.js"></script>
 
 ## The assembly part
 
-After tapeing the LED behind one of the glasses's lenses I passed the long wire connecting the LED behind my ear and into the inside pocket of my leather jacket, where all electronic components were accommodated inside a cardboard box in a way I could access the controls at its side. The final assembly working properly can be seen at the video below.
+I taped the LED behind one lens and ran a long wire back behind my ear and into the inside pocket of my leather jacket, where the electronics were tucked inside a small cardboard box. That way, the controls stayed easy to reach while the wearable part stayed simple and lightweight. The final result is shown in the video below.
 
 <div style="text-align: center;">
   <iframe

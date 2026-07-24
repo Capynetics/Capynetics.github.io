@@ -7,9 +7,9 @@ date:   2019-07-14
 categories: General
 ---
 
-The Casio F-91W is without a doubt a classic. I love classics and, more than classics, I love adding functionalities to my every day carry items. That is why I changed my watch's wristband to a Paracord wristband with multiple built-in functionalities.
+The Casio F-91W is one of those watches that just keeps showing up in the right places. It is simple, reliable, and surprisingly easy to customize, which makes it a great little project platform. I have always liked turning everyday objects into something a bit more useful, so I decided to swap the original wristband for a paracord version with a few extra practical features built in.
 
-To accomplish this I combined two tutorials, the first is about changing the wristband to a NATO wristband (because they are similar in nature) and the second is on how to make a paracord wristband (because I would need to unmake and then remake the one I bought from China). The two tutorials are embedded below.
+To make that happen, I combined two tutorials. One was about converting a regular watch strap into a NATO-style band, and the other was about making a paracord bracelet. Since the paracord version I bought from China needed to be taken apart and rebuilt anyway, it felt like the perfect excuse to experiment a little.
 
 <div style="text-align: center;">
   <iframe
@@ -37,7 +37,7 @@ To accomplish this I combined two tutorials, the first is about changing the wri
   </iframe>
 </div>
 
-After watching both videos and paying attention to the pictures below you will be able to follow the process I used to make the modification.
+After watching both videos and looking closely at the pictures below, you should be able to follow the process I used to make the modification.
 
 {:refdef: style="text-align: center;"}
 ![Image]({{ site.baseurl }}/assets/2019-07-16-Tactical-MOD-for-the-CASIO-f-91w/CASIO1.jpg)

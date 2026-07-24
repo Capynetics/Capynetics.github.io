@@ -7,9 +7,9 @@ date:   2019-07-14
 categories: General
 ---
 
-LEGO is a great way to get kids involved in STEM and creative endeavors. During my work at an ONG specialized in teaching programming and robotics to children I had the opportunity to develop and administrate classes on these subjects. Here I want to share a class I developed using the WeDo 1.0 kit and Scratch 1.4. It is an introductory class to the kit and it expects the child to have previous experience with the scratch programming language.
+LEGO is one of those tools that makes learning feel a lot less intimidating. It is hands-on, visual, and just playful enough that kids usually forget they are learning something serious. During my time working at an NGO focused on teaching programming and robotics to children, I had the chance to develop and run classes around these ideas. One of the activities I put together used the WeDo 1.0 kit and Scratch 1.4, and it was meant to be a friendly introduction to both the hardware and the programming side of things.
 
-By the end of the class, the child is supposed to have built a remote control cart and understand how it works and how to program it. The cart behavior is demonstrated in the video below.
+By the end of the class, the children were supposed to have built a small remote-control cart and understood how it worked well enough to program it. The result was always a nice mix of excitement and concentration, and the video below shows the kind of behavior the class was aiming for.
 
 <div style="text-align: center;">
   <iframe
@@ -24,11 +24,11 @@ By the end of the class, the child is supposed to have built a remote control ca
   </iframe>
 </div>
 
-Embedded in this post are the two documents I wrote to prepare the class, the rules for using the kit and a more detailed building instruction presentation generated in HTML by the LEGO Digital Designer.
+I have included the materials I prepared for the class here: the rules for using the kit, the activity guide, and a more detailed set of building instructions generated in HTML with LEGO Digital Designer.
 
 # Class rules
 
-The class rules should be remembered at the beginning of every class and every kid must have them in mind during the activity. They are as follows:
+These rules are the kind of things that are easy to forget in the middle of the excitement, so I made sure to remind the kids at the beginning of every session. They are simple, but they make the whole experience smoother.
 
 1. Everyone is responsible for the kit and the parts that will be used in the assembly.  
 
@@ -50,7 +50,7 @@ The class rules should be remembered at the beginning of every class and every k
 
 ## Activity book
 
-The activity book is supposed to be given to each child at the beginning of the class. They will explore it and make the activity in their own pace and, if necessary, with the help of a monitor.
+The activity book was meant to be given to each child at the beginning of the session. They could explore it at their own pace and ask for help whenever they got stuck.
 
 <iframe src="https://drive.google.com/file/d/12d3Q0Jpr9syhpkLtZk0sba9PCjSYcpVO/preview" width="640" height="480"></iframe>
 
@@ -60,4 +60,4 @@ The activity book is supposed to be given to each child at the beginning of the 
 
 [CLICK HERE FOR INSTRUCTIONS IN FULL SCREEN](https://capynetics.github.io/assets/2019-07-14-Pedagogical-activity-with-lego/lego/)
 
-For help or insights about the class please feel free to comment in this post. I will answer as soon as I can
+If you want to use the class or adapt it for your own group, feel free to leave a comment. I am always happy to hear how other people make use of these ideas.

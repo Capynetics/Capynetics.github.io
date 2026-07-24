@@ -13,7 +13,7 @@ The example consists of an RTL project that provides a warning signal when the a
 
 ## The design phase
 
-In chapter five of Frank Vahid's book "Digital Design", the author enumerates the four phases of any RTL project. They are as follows:In chapter five of Frank Vahid's book "Digital Design", the author enumerates the four phases of any RTL project. They are as follows:
+In chapter five of Frank Vahid's book "Digital Design", the author enumerates the four phases of any RTL project. They are as follows:
 
 1. Get a high-level finite state machine that describes the expected final behavior.
 
@@ -55,7 +55,7 @@ Down below are each and every one of the four diagrams representing every phase 
 
 ## The coding phase
 
-Once the projecting phase was done all the necessary information for executing the project was available. The project was implemented with an FPGA chip coded in VHDL. All the code is available in this link. The code used a structural style for streamlining the collaborative coding process and was test benched with ModelSim-Altera.
+Once the projecting phase was done all the necessary information for executing the project was available. The project was implemented with an FPGA chip coded in VHDL. All the code is available in this [link](https://github.com/Capynetics/RTL-PROJECT-EXAMPLE). The code used a structural style for streamlining the collaborative coding process and was test benched with ModelSim-Altera.
 
 ## The Hardware phase
 

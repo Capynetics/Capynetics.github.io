@@ -6,11 +6,11 @@ image: assets/2019-02-26-Different-Technologies-for-digitally-copying-objects/20
 date:   2019-02-26 
 categories: General
 ---
-Every day the line between real and digital gets thinner. Virtual reality, augmented reality, and 3D printing are greatly responsible for this change. In these brave new world, it is necessary, and also useful, to be able to digitize objects and to easily edit, share and replicate them. In this article, I will go through 3 technologies that I generally use when faced with such a challenge and that are very low cost. This is not going to be an in-depth tutorial about any of them, but a fast look and subsequent discussion about recommended uses and good practices.
+Every day the line between the physical world and the digital one gets a little thinner. Virtual reality, augmented reality, and 3D printing have made that gap feel much smaller, and that is why being able to copy objects digitally is such a handy skill. In this article, I am going to go through three low-cost techniques I have used for that purpose. This is not meant to be a deep tutorial for any one of them, but more of a practical overview of when each one makes sense and what to watch out for.
 
 # Digitally copying objects with 3d modeling
 
-If the object you need to copy has a simple geometry and/or is neither too small or too untextured for photogrammetry or 3D scanning I strongly suggest you simply look at it and model it in a 3D modeling software. It may look difficult at first, but 3D modeling is much easier to learn than it looks. There are countless methods and softwares to achieve the intended result. I personally recommend Autodesk’s Fusion 360 and parametric modeling. I will illustrate the processes with the following example: One of the pieces of my chess board got lost and I needed a new one. The piece was very small, making 3D scanning difficult, and had no texture, making photogrammetry hard, but had a very simple geometry, so I simply 3D modeled a new one based on one of the non-missing pieces, as shown below.
+If the object you want to copy has a simple shape and is not too small or too shiny, the easiest route is often to just model it directly in a 3D program. It can look intimidating at first, but it is usually easier to learn than it seems. There are plenty of ways to do it, and I personally like Autodesk Fusion 360 because it is practical and very approachable. I will show the process with a quick example: one of the pieces of my chessboard went missing, and I needed a replacement. The piece was small, which made scanning awkward, and it had no texture, which made photogrammetry a poor fit, but it had a very simple shape, so I modeled a new one from the other pieces and used that as a reference.
 
 {:refdef: style="text-align: center;"} 
 ![Image]({{ site.baseurl }}/assets/2019-02-26-Different-Technologies-for-digitally-copying-objects/horse.gif) 
@@ -20,7 +20,7 @@ If the object you need to copy has a simple geometry and/or is neither too small
 *3D modeling horse*
 {: refdef}
 
-As seen above, with only some commands and photographic reference I was able to quickly create a good enough copy of the piece. The 3D model was then exported to stereolithographic format and 3D printed. You can see and download the file below.
+As you can see, with a few modeling commands and some reference photos, I was able to create a good enough replacement very quickly. The model was then exported as an STL file and printed. You can see and download it below.
 
 <div style="text-align: center;">
 <div class="sketchfab-embed-wrapper"> <iframe title="Chess Horse" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/fafa037f76aa4a749f87c678aa769321/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/chess-horse-fafa037f76aa4a749f87c678aa769321?utm_medium=embed&utm_campaign=share-popup&utm_content=fafa037f76aa4a749f87c678aa769321" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Chess Horse </a> by <a href="https://sketchfab.com/setpointcapybara?utm_medium=embed&utm_campaign=share-popup&utm_content=fafa037f76aa4a749f87c678aa769321" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> setpointcapybara </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=fafa037f76aa4a749f87c678aa769321" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
@@ -28,7 +28,7 @@ As seen above, with only some commands and photographic reference I was able to 
 
 # Digitally copying objects with photogrammetry
 
-If the object you are trying to copy has a geometry too complicated to be hand-copied in a 3D modeling software and you have no access to a 3D scanner a good technique I would recommend is photogrammetry. In this realm I recommend Meshroom. But remember, in order to photogrammetry to work properly you need an object that has a very textured surface. Things like stone or wooden structures are perfect. If you need to copy a shiny metallic or untextured object (like a human face) I wouldn’t recommend this technique. To exemplify this I will show how I used photogrammetry to digitally copy a statue in my university. This statue is a perfect example, it is big, has a rough surface and the pictures were taken on a cloudy day (avoiding hard shadows).
+If the object is too complicated to model by hand and you do not have a 3D scanner, photogrammetry is a great option. I have used Meshroom for this, and it works best when the object has lots of texture and surface detail. Stone, wood, and other rough materials are perfect for it. If the object is shiny, metallic, or very smooth, like a human face, it gets much harder to get a clean result. To illustrate the process, I will show how I used photogrammetry to digitize a statue at my university. It was a good test case because it was large, had a rough surface, and the photos were taken on a cloudy day, which helped avoid harsh shadows.
 
 {:refdef: style="text-align: center;"} 
 ![Image]({{ site.baseurl }}/assets/2019-02-26-Different-Technologies-for-digitally-copying-objects/venus.gif) 
@@ -38,7 +38,7 @@ If the object you are trying to copy has a geometry too complicated to be hand-c
 *Going around Venus*
 {: refdef}
 
-After taking the pictures I uploaded them to the easy to use Meshroom interface. The only parameter I changed from the default options was “Max points” in the “Mesh” node (from 5000000 to 1000000). The whole reconstruction process took 3 hours on my computer, even with my NVIDIA GeForce GTX 950. Down below you can see the resulted file.
+After taking the photos, I uploaded them to Meshroom and used its default settings with one small change: I reduced the maximum number of points in the mesh node from 5,000,000 to 1,000,000. The reconstruction took about three hours on my computer, even with an NVIDIA GeForce GTX 950, but the result was good enough to be worth the wait. You can see the output below.
 
 <div style="text-align: center;">
 <div class="sketchfab-embed-wrapper"> <iframe title="Venus UFMG" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/70770c2f744541e0b350b9a591faf4ed/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/venus-ufmg-70770c2f744541e0b350b9a591faf4ed?utm_medium=embed&utm_campaign=share-popup&utm_content=70770c2f744541e0b350b9a591faf4ed" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Venus UFMG </a> by <a href="https://sketchfab.com/setpointcapybara?utm_medium=embed&utm_campaign=share-popup&utm_content=70770c2f744541e0b350b9a591faf4ed" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> setpointcapybara </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=70770c2f744541e0b350b9a591faf4ed" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
@@ -46,7 +46,7 @@ After taking the pictures I uploaded them to the easy to use Meshroom interface.
 
 # Digitally copying objects with 3d Scanning
 
-3D scanners are very expensive. But if you are on a budget the XBOX 360 Kinect is a good substitute. It is a fairly capable 3D scanner when used with the Skanect software. You only need the proper adaptor, so you can plug the Kinect to Windows through USB. I use it every time I can scan something at home with complex or bio-inspired geometry. As a demonstration, I will copy a human bust. The process is quite simple, you plug the sensor to your PC, activate the software and then walk around the subject trying to catch as much detail as possible. Down below you can see the UI.
+3D scanners can be expensive, but if you are working on a budget the Xbox 360 Kinect is a surprisingly good substitute. With Skanect, it can act like a basic 3D scanner, and you only need the right adapter to connect it to a Windows PC over USB. I have used it at home when I wanted to scan something with interesting geometry or a natural, organic shape. To illustrate it, I scanned a human bust. The process is fairly simple: plug the sensor into the PC, launch the software, and walk around the subject while trying to capture as much detail as possible. The interface looks like this.
 
 {:refdef: style="text-align: center;"} 
 ![Image]({{ site.baseurl }}/assets/2019-02-26-Different-Technologies-for-digitally-copying-objects/ScaningProcess.png) 
@@ -55,21 +55,21 @@ After taking the pictures I uploaded them to the easy to use Meshroom interface.
 Scaning process
 {: refdef}
 
-Make sure you have enough space to walk around the subject and the sensor wire is not going to be a problem while you walk. It is also good to remember that this technique does not work well in shiny metallic surfaces. The whole process took about 15 minutes. You can see and download the resulted file below.
+It is worth making sure you have enough space to walk around the object and that the cable will not get in the way. It is also important to remember that this technique struggles a lot with shiny metallic surfaces. The whole scan took about fifteen minutes. You can see and download the result below.
 <div style="text-align: center;">
 <div class="sketchfab-embed-wrapper"> <iframe title="Betty" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/d3fa90b3c49447279573c23b4b885034/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/betty-d3fa90b3c49447279573c23b4b885034?utm_medium=embed&utm_campaign=share-popup&utm_content=d3fa90b3c49447279573c23b4b885034" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Betty </a> by <a href="https://sketchfab.com/setpointcapybara?utm_medium=embed&utm_campaign=share-popup&utm_content=d3fa90b3c49447279573c23b4b885034" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> setpointcapybara </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=d3fa90b3c49447279573c23b4b885034" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
 </div>
 
 # Conclusion
 
-A good summary of the technologies would be:
+A quick way to think about these methods is this:
 
- - 3D Modeling is a good choice when the subject is simple enough or the other two options aren’t available.
- - Photogrammetry is a good choice to medium complex objects with rough surfaces when a 3D scanner is not available and time/processing power is not a problem.
- - 3D Scanning is a good choice to complex non-shiny objects of medium size.
- - Another good addition to the softwares and techniques demonstrated in this article are MeshLab and Autodesk’s Netfabb to post-process the resulted meshes.
+ - 3D modeling is a great choice when the object is simple enough or when the other options are not practical.
+ - Photogrammetry works well for medium-complexity objects with rough surfaces when you have time and processing power to spare.
+ - 3D scanning is a good choice for complex objects that are not shiny and are about medium size.
+ - If you want to polish the results even further, MeshLab and Autodesk Netfabb are both excellent tools for cleaning up the meshes afterward.
 
-Down below you can see a timelapse of the examples in this article being 3D printed.
+Below you can see a timelapse of the examples from this article being 3D printed.
 
 <div style="text-align: center;">
   <iframe
