@@ -24,11 +24,26 @@ For watering my plants with Arduino I started by gathering the necessary pieces.
 *Project diagram*
 {: refdef}
 
+After assembling the control box and verifying that it operated correctly, I moved all of the plants to the laundry room. There, I arranged them on a shelf and installed a water distribution tube that ran around the entire room. The flow of water through this tube was controlled by the solenoid valve described in the previous section.
+
+Water was delivered from the main tube to each plant through very thin plastic tubing connected to the distribution line. Every plant had its own dedicated tube, with the end tied into a small knot to regulate the flow rate and allow water to drip gently into the pot. A short Blender animation illustrating the complete setup is shown below.
+
+<div style="text-align: center;">
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube-nocookie.com/embed/k8tQSi8_C4E"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+
 ## Programing the Arduino
 
 The developed code is down below. Again, it is pretty straightforward. I just had some problems because both the screen and the DS3231 modules use I2C to communicate with the Arduino and some libraries were just not working well together. Thankfully, this [LCD library](https://github.com/fmalpartida/New-LiquidCrystal) and this [RTC library](https://github.com/rodan/ds3231) worked fine.
-
-<script src="https://gist.github.com/SetpointCapybara/4345049b70fda7ad28ff9a95b5f9f83b.js"></script>
 
 ```cpp
 #include <Wire.h>

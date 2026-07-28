@@ -7,13 +7,15 @@ date:   2025-10-30
 categories: General
 ---
 
-Aerial manipulators unite the agility of drones with the dexterity of robotic arms. But when the manipulator moves, the drone’s flight dynamics shift instantly — the center of mass changes, and gravity pulls differently on every link. To keep everything stable, a controller must account for these coupled dynamics.
+## Introduction
+
+Aerial manipulators unite the agility of drones with the dexterity of robotic arms. But when the manipulator moves, the drone’s flight dynamics shift instantly, the center of mass changes, and gravity pulls differently on every link. To keep everything stable, a controller must account for these coupled dynamics.
 
 A practical and elegant solution: **PD + gravity compensation**.
 
-## The Problem
+## Presenting the problem
 
-When a manipulator is attached to a UAV, its movement alters the total inertia and center of gravity of the system. Traditional UAV controllers assume a rigid body and cannot handle these internal disturbances. A common solution adopted in aerial manipulation is to implement two different controllers, one for the arm and one for the drone, and then expect that the movement of one to be felt as a disturbance by the other. The strategy just mentioned may work when the inertia of the drone is much bigger than the inertia of the arm, but this is not always true. In the context of this project I had to put the *boomslang* arm on the *tilthex* drone, so I couldn’t make the simplification explained before.
+When a manipulator is attached to a UAV, its movement alters the total inertia and center of gravity of the system. Traditional UAV controllers assume a rigid body and cannot handle these internal disturbances. A common solution adopted in aerial manipulation is to implement two different controllers, one for the arm and one for the drone, and then expect that the movement of one to be felt as a disturbance by the other. The strategy just mentioned may work when the inertia of the drone is much bigger than the inertia of the arm, but this is not always true. In the context of this project I had to put the *boomslang* arm on the *tilthex* drone, so I couldn’t make the simplification explained before. I was faced with this challenge during an intership at LAAS-CNRS, with the great guys at the RIS team.
 
 {:refdef: style="text-align: center;"}
 ![Image]({{ site.baseurl }}/assets/2025-10-30-PD-plus-gravity-compensation-for-aerial-manipulation/boomslang.png)
@@ -31,7 +33,7 @@ When a manipulator is attached to a UAV, its movement alters the total inertia a
 
 The goal here is to design a whole-body controller that stabilizes both the UAV and manipulator under gravity and makes the movement of the drone compensate for the movement of the arm and vice-versa.
 
-## The modeling of the system
+## Modeling the system
 
 The generalized coordinates of the system can be presented as: 
 
@@ -173,7 +175,7 @@ Then we can finally define:
   $$
   Body wrench.
 
-## The control strategy
+## Control strategy
 
 As suggested by the title, the control strategy chosen here was a simple PD plus gravity compensation. It was implemented by choosing the $$\tau$$ to be equal to:
 
@@ -290,5 +292,16 @@ The proposed solution was implemented using the Python package [Pinocchio](https
     allowfullscreen>
   </iframe>
 </div>
+
+After implementing the control law in Python and validating it in my own simulation using Pinocchio, I ported the controller to C++ so that it could be deployed on the real robot. This stage was particularly challenging because the laboratory did not use ROS; instead, it relied on its own software stack, which I first had to learn before integrating the controller.
+
+Once the control strategy had been implemented in C++ within the lab's framework, I was finally able to test the system in Gazebo. The controller is publicly available and can be downloaded and tested from the following [GitHub repository](https://github.com/laas/WAMCtrl-genom3).
+
+{:refdef: style="text-align: center;"}
+![Image]({{ site.baseurl }}/assets/2025-10-30-PD-plus-gravity-compensation-for-aerial-manipulation/wamctrl_overview.png)
+{: refdef}
+{:refdef: style="text-align: center;"}
+*Proposed Aerial Manipulator in Gazebo*
+{: refdef}
 
 For now, the system can fly around the workspace and move the arm, but for reliable interaction with the environment an impedance control scheme will be implemented at a later date.

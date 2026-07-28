@@ -7,6 +7,8 @@ date:   2022-06-11
 categories: General
 ---
 
+## Introduction
+
 We live in a world where web development frameworks seem to appear and disappear faster than the seasons change. Even if you are using something modern today, you will probably need to refresh your fundamentals at some point. That is why it is always a good idea to revisit the basics, especially if you are just starting out. These five small challenges are a fun way to do exactly that, and I am challenging you to try them without leaning on a framework.
 
 I am sure you could solve these with a single line of code using whatever library or tool you are used to, but that would miss the point. The goal here is to get back to plain HTML, CSS, and JavaScript and see how much you can do with the fundamentals. I also added my own simple implementations so you can compare approaches if you want.
@@ -83,3 +85,8 @@ The test cases are available on my [GitHub](https://github.com/Capynetics/Soccer
 The final challenge is to generate a maze using Unicode characters. Try not to use HTML canvas, because that would make it too easy. Feel free to choose whatever maze-generation algorithm you like, and add a character that can be moved through the labyrinth.
 
 <figure><iframe width="100%" height="700" src="//jsfiddle.net/eulomelo/20p6bqz9/219/embedded/result/" allowfullscreen="allowfullscreen"></iframe></figure>
+
+## Conclusion
+
+These challenges are simple on the surface, but they are great for sharpening the fundamentals and building confidence with plain web technologies. If you try even one of them, you will probably learn something useful that carries over to larger projects.
+
