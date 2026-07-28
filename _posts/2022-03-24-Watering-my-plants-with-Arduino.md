@@ -7,6 +7,8 @@ date:   2022-03-24
 categories: General
 ---
 
+## Introduction
+
 My mom loves plants. Everywhere she goes she finds a way of making a garden out of thin air. So I should not have been surprised when a small forest appeared in my apartment as the weeks she stayed with me went by during the year. She has now left. I know she would feel disappointed if she did not find her plants next time she comes to pay me a visit, so in the meantime, I am an involuntary gardener. So, it is "automating boring tasks with Arduino time".
 
 In this short post, I will share how I made a watering system for my mom's plants with Arduino, and how you can make one too.
@@ -22,11 +24,66 @@ For watering my plants with Arduino I started by gathering the necessary pieces.
 *Project diagram*
 {: refdef}
 
-## Programimng the Arduino
+## Programing the Arduino
 
 The developed code is down below. Again, it is pretty straightforward. I just had some problems because both the screen and the DS3231 modules use I2C to communicate with the Arduino and some libraries were just not working well together. Thankfully, this [LCD library](https://github.com/fmalpartida/New-LiquidCrystal) and this [RTC library](https://github.com/rodan/ds3231) worked fine.
 
 <script src="https://gist.github.com/SetpointCapybara/4345049b70fda7ad28ff9a95b5f9f83b.js"></script>
+
+```cpp
+#include <Wire.h>
+#include <DS3231.h>
+#include <LiquidCrystal_I2C.h>
+
+DS3231 rtc(SDA, SCL);
+LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);
+Time t;
+
+void setup()
+{
+  lcd.begin(16, 2);
+  rtc.begin();
+  pinMode(12, OUTPUT);
+  digitalWrite(12, LOW);
+  Serial.begin(9600);
+}
+
+int horaa = 18;
+int minutoa = 0;
+
+void loop()
+{
+  t = rtc.getTime();
+
+  lcd.setBacklight(HIGH);
+
+  lcd.setCursor(0, 0);
+  lcd.print("hora: ");
+  lcd.print(rtc.getTimeStr());
+
+  lcd.setCursor(0, 1);
+  lcd.print("alvo: ");
+  lcd.print(horaa);
+  lcd.print(":");
+
+  if (minutoa < 10)
+    lcd.print("0");
+
+  lcd.print(minutoa);
+  lcd.print(":00");
+
+  if (t.hour == horaa && t.min == minutoa) {
+    digitalWrite(12, HIGH);
+  }
+
+  if (t.hour == horaa && t.min == minutoa + 1) {
+    digitalWrite(12, LOW);
+  }
+
+  delay(1000);
+  lcd.clear();
+}
+```
 
 ## Final result
 

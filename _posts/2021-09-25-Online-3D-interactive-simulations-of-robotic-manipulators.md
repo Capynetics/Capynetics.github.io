@@ -7,7 +7,9 @@ date:   2021-09-25
 categories: General
 ---
 
-Robotic manipulators are essential parts of the modern world. It would be impossible to maintain our civilization without the strength, speed, and repeatability of those machines. Then, it is of great importance to understand those devices. In this article, the reader will find online 3D interactive simulations of common robotic manipulators to help with discussions around the mathematical and physical models used to describe them. The simulations were made with three.js.
+## Introduction
+
+Robotic manipulators are essential parts of the modern world. It would be impossible to maintain our civilization without the strength, speed, and reliability of those machines. Then, it is of great importance to understand those devices. In this article, the reader will find online 3D interactive simulations of common robotic manipulators to help with discussions around the mathematical and physical models used to describe them. The simulations were made with three.js.
 
 ## 6-Axis
 

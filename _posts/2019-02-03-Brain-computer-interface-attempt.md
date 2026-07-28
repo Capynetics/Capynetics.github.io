@@ -6,13 +6,16 @@ image: assets/2019-02-03-Brain-computer-interface-attempt/2019-02-03-Brain-compu
 date:   2019-02-03
 categories: General
 ---
+
+## Introduction
+
 The electrical activity of the human brain has always felt a little magical to me. It is one of those topics that sounds almost science-fiction at first, but once you start digging into it, you realize it is surprisingly practical and very hands-on. In this project, I tried to build a simple brain-computer interface by amplifying and filtering brain signals, sending them to a data acquisition board, and then working with them in LabVIEW.
 
 The basic idea was simple enough: if brain activity has recognizable patterns, then those patterns might be used to trigger something useful. In practice, that turned out to be a lot trickier than it sounds, but it was exactly the kind of challenge I enjoy. The goal was to isolate different frequency bands and see whether they could be interpreted well enough to control a small output.
 
 This project was meant to be a lightweight version of the NeuroSky approach, using the frontal cortex and the region around the ears as reference points. The idea was to look at how different brainwave frequencies relate to different mental states and then use that information to build a basic control system.
 
-# Physiology of the Human Brain
+## Physiology of the Human Brain
 The human brain is a complicated machine, but it can be broken down into a few major regions that help make sense of what is going on. The frontal, parietal, occipital, and temporal lobes each have their own role, and for this project I focused on the frontal lobe because it is a natural place to look for signals related to attention, movement, and decision-making.
 
 {:refdef: style="text-align: center;"}
@@ -38,7 +41,7 @@ There are other frequencies too, but for this project the four above were the mo
 | Alfa  | 8 to 13 |
 | Beta  | 13 to 30 |
 
-# Instrumentation
+## Instrumentation
 To make the system work, I needed the basic tools for measuring electrical signals from the brain. The final setup used the kind of instrumentation you would expect for an EEG experiment, and the block diagram below gives a good overview of how the pieces fit together.
 
 {:refdef: style="text-align: center;"}
@@ -73,7 +76,7 @@ The circuit itself was fairly simple in concept. It used an instrumentation ampl
 
 The data acquisition board was a National Instruments DAQ NI USB-6210, and it was responsible for reading the differential voltage from the circuit and sending that information to the computer.
 
-# LabView interface
+## LabView interface
 LabVIEW is one of those tools that looks friendly at first and then suddenly turns into a deep rabbit hole. That said, it was very useful for this experiment because it let me visualize the raw signal and filter the signal bands in a fairly intuitive way. From there, I built a small algorithm that used the measured brainwave activity and the influence of blinking to drive an LED.
 
 {:refdef: style="text-align: center;"}
@@ -87,7 +90,7 @@ The algorithm filtered the alpha and beta bands, measured their amplitudes, and 
 
 What ended up being most noticeable was the effect of blinking. The eyes were interfering with the measurements in a very obvious way, and that gave me a practical way to generate a simple control signal. In the end, that was the feature I used to make the system respond.
 
-# Results
+## Results
 After a fair amount of testing and a lot of small fixes, the setup finally worked in the way I had hoped. To use it, the person would sit comfortably, the electrodes would be placed at the mastoids and at position Fp1 following the 10-20 system, and the whole thing would be started up.
 
 {:refdef: style="text-align: center;"}
@@ -114,9 +117,4 @@ Once everything was connected, the LED would blink every time the user blinked, 
 </div>
 
 In the end, this project taught me that building a brain-computer interface is not just about wiring a few parts together. It is a mix of electronics, signal processing, experimentation, and a lot of patience.
-
-# References
-- Kasarwala J.N., Warrier J.S. and Sanghvi S.H. (2012). International Journal on Advanced Electrical and Electronics Engineering (IJAEEE). Volume-1, Issue-1.
-- Parokaran, J.V. July 2009. School of Innovation, Design and Technology, Vasteras, Sweden.
-- Bernard Porr, The Biosignal How-To. Available at: <http://biosignals.berndporr.me.uk/doku.php> Access on August first, 2015.
 

@@ -7,9 +7,11 @@ date:   2020-06-14
 categories: General
 ---
 
-This post is the fruit of boredom due to the quarantine, some cardboard I had laying around, and a little bit of curiosity. If you want to build a cardboard capybara just like this one, you can download the instructions at the end of this article. If you want to get acquainted with the Slicer for Fusion360 software, or are just curious about how I projected the sculpture, I strongly suggest reading the whole text.
+## Introduction
 
-## Getting to work
+This post is the fruit of boredom due to the quarantine, some cardboard I had laying around, and a little bit of curiosity. If you want to build a cardboard capybara just like this one, you can download the instructions at the end of this article. If you want to get acquainted with the Slicer for Fusion360 software, or are just curious about how I designed the sculpture, I strongly suggest reading the whole text.
+
+## Design process
 
 First of all, to make the project I needed to find a good 3D model of a capybara. It was not hard to find [this low poly capybara model](https://www.thingiverse.com/thing:2721448) on Thingverse. Then I needed to download the software I would be using. Autodesk developed it with the intent of it being used in conjunction with Fusion360, but here I used the stand-alone version.
 
@@ -28,7 +30,7 @@ Slicer for Fusion360 is generally used with a laser cutter. I did not have one. 
 
 ## Fitting everything together
 
-The last part is to simply put the pieces of this 3D puzzle together. I will add bellow the small animation the software generates to help you put everything in place.
+The last part is to simply put the pieces of this 3D puzzle together.
 
 <figure><iframe src="https://drive.google.com/file/d/1CmyJLTPgqW3hjhqt8hXVvrLUJX4btWlt/preview" width="640" height="480"></iframe></figure>
 

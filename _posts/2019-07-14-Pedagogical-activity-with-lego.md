@@ -7,6 +7,8 @@ date:   2019-07-14
 categories: General
 ---
 
+## Introduction
+
 LEGO is one of those tools that makes learning feel a lot less intimidating. It is hands-on, visual, and just playful enough that kids usually forget they are learning something serious. During my time working at an NGO focused on teaching programming and robotics to children, I had the chance to develop and run classes around these ideas. One of the activities I put together used the WeDo 1.0 kit and Scratch 1.4, and it was meant to be a friendly introduction to both the hardware and the programming side of things.
 
 By the end of the class, the children were supposed to have built a small remote-control cart and understood how it worked well enough to program it. The result was always a nice mix of excitement and concentration, and the video below shows the kind of behavior the class was aiming for.
@@ -26,7 +28,7 @@ By the end of the class, the children were supposed to have built a small remote
 
 I have included the materials I prepared for the class here: the rules for using the kit, the activity guide, and a more detailed set of building instructions generated in HTML with LEGO Digital Designer.
 
-# Class rules
+## Class rules
 
 These rules are the kind of things that are easy to forget in the middle of the excitement, so I made sure to remind the kids at the beginning of every session. They are simple, but they make the whole experience smoother.
 
@@ -46,13 +48,13 @@ These rules are the kind of things that are easy to forget in the middle of the 
 
 ## Class plan
 
-<iframe src="https://drive.google.com/file/d/1pHE9hy-xrLaby08WbTEZCxihboAuIHb1/preview" width="640" height="480"></iframe>
+<iframe src="https://drive.google.com/file/d/1Bjg30eGxuEAv0cLcFH2yFwUyP7T6fZui/preview" width="640" height="480"></iframe>
 
 ## Activity book
 
 The activity book was meant to be given to each child at the beginning of the session. They could explore it at their own pace and ask for help whenever they got stuck.
 
-<iframe src="https://drive.google.com/file/d/12d3Q0Jpr9syhpkLtZk0sba9PCjSYcpVO/preview" width="640" height="480"></iframe>
+<iframe src="https://drive.google.com/file/d/1bc43Ekpy7eaWq-2Evh3ui-3URypObhr-/preview" width="640" height="480"></iframe>
 
 ## HTML instructions
 

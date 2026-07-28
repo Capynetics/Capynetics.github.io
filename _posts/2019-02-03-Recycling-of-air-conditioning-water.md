@@ -7,9 +7,11 @@ date:   2019-02-03
 categories: General
 ---
 
+## Introduction
+
 This was a project I worked on with some colleagues during vocational school. It started as a fairly simple question: how much water could we recover from the air-conditioning system at campus, and could that water be reused instead of just thrown away? We collected data and did some analysis with the idea that one day it might help justify a real recovery system. Since the results could be useful to someone else too, I thought it was worth sharing them.
 
-## The initial problem
+## Initial problem
 
 Air conditioners naturally produce water when humid air cools down and the moisture condenses. In most cases, that water is simply drained away and wasted. At the campus where I studied, the drainage system was not very well organized, so the runoff from the units spread across the floor and ended up damaging the nearby structures.
 
@@ -20,7 +22,7 @@ Air conditioners naturally produce water when humid air cools down and the moist
 *Problems caused by the water*
 {: refdef}
 
-## The Measurement process
+## Measurement process
 
 To measure the amount of water, we built a few simple measuring bottles. They were made from plastic soda bottles with volume markings visible on the side. To make the measurements reliable, we followed the DOQ-CGRE-027 standard from Inmetro, which is the Brazilian metrology authority for level measurement. We weighed the bottles on a semi-analytical scale, slowly filled them with distilled water using a pipette, and used the known density of the water to infer the volume. Once we knew the volume, we marked the bottles carefully with a height gauge and built our own scale step by step.
 
@@ -33,11 +35,11 @@ When the bottles were ready, we placed them under the drain tube and collected w
 *Building process*
 {: refdef}
 
-## The results
+## Results
 
 We did three sets of measurements, about a month apart. They were made in an air conditioner of the Springer brand with a potency of 36000 BTU/h
 
-### Measurements
+### Measurements (27/08/15)
 
 | (27/08/15) | Time between measurements | Initial Relative humidity | Initial Temperature (°C) | Volume of water (mL) | Final Temperature (ºC) |
 |------------|---------------------------|---------------------------|--------------------------|----------------------|------------------------|
@@ -46,7 +48,7 @@ We did three sets of measurements, about a month apart. They were made in an air
 | 3          | 15 min                    | 59%                       | 25,6                     | 500                  | 26,0                   |
 | 4          | 15 min                    | 58%                       | 26,0                     | 650                  | 26,2                   |
 
-### Measurements
+### Measurements (27/07/15)
 
 | (27/07/15) | Time between measurements | Initial Relative humidity | Initial Temperature (°C) | Volume of water (mL) | Final Temperature (ºC) |
 |------------|---------------------------|---------------------------|--------------------------|----------------------|------------------------|
@@ -55,7 +57,7 @@ We did three sets of measurements, about a month apart. They were made in an air
 | 3          | 15 min                    | 46%                       | 26,8                     | 350                  | 25,8                   |
 | 4          | 15 min                    | 52%                       | 25,8                     | 350                  | 25,3                   |
 
-### Measurements
+### Measurements (18/06/15)
 
 | (18/06/15) | Time between measurements | Initial Relative humidity | Initial Temperature (°C) | Volume of water (mL) | Final Temperature (ºC) |
 |------------|---------------------------|---------------------------|--------------------------|----------------------|------------------------|
