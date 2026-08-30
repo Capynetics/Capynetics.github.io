@@ -1,6 +1,7 @@
 ---
 layout: new_post
 title:  "My robot navigation algorithms simulator"
+published: false
 author: Johnata Brayan
 image: assets/2024-01-25-My-robot-navigation-algorithms-simulator/2024-01-25-My-robot-navigation-algorithms-simulator.png
 date:   2024-01-25
